@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 7220571}
   - component: {fileID: 7220570}
   - component: {fileID: 7220569}
+  - component: {fileID: 7220573}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -208,13 +209,29 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7220568}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.75, y: 0, z: 0}
+  m_LocalRotation: {x: 0.24032259, y: -0.078829184, z: 0.30154178, w: 0.91929525}
+  m_LocalPosition: {x: 2.75, y: 3.64, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 29.301, y: 0, z: 36.320004}
+--- !u!54 &7220573
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7220568}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &135383088
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,6 +327,7 @@ GameObject:
   - component: {fileID: 561273838}
   - component: {fileID: 561273837}
   - component: {fileID: 561273836}
+  - component: {fileID: 561273840}
   - component: {fileID: 561273835}
   m_Layer: 0
   m_Name: Cube
@@ -399,11 +417,27 @@ Transform:
   m_GameObject: {fileID: 561273834}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 100, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &561273840
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 561273834}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1523067966
 GameObject:
   m_ObjectHideFlags: 0
