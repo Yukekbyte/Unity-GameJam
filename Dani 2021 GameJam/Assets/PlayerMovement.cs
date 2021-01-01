@@ -2,19 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class test : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
-    public Transform t;
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("hey");
-        t = gameObject.GetComponent<Transform>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        float x = Input.GetAxis("Horizontal");
     }
 }
