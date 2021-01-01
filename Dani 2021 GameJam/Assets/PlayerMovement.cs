@@ -4,7 +4,6 @@ public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody2D rb;
     public float playerSpeed;
-    public float sprintMultiplier;
     public float jumpForce;
     public BoxCollider2D boxCollider2D;
     public LayerMask GroundLayer;
@@ -14,7 +13,16 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         boxCollider2D = GetComponent<BoxCollider2D>();
     }
+
     void Update()
+    {
+        //Jump
+        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
+        {
+            Jump(jumpForce);
+        }
+    }
+    void FixedUpdate()
     {
         //Player Input
         float x = Input.GetAxis("Horizontal");
@@ -23,12 +31,6 @@ public class PlayerMovement : MonoBehaviour
 
         //Walk
         Walk(dir);
-
-        //Jump
-        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
-        {
-            Jump(jumpForce);
-        }
     }
     
     //Walk method met een direction (dir) nodig
@@ -53,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
     {
         //Stuurt een ray van het midden van de speler naar beneden tot de rand van de boxcollider + margin
         //returns true wanneer de ray een object met groundlayer raakt, anders false
-        float margin = 0.03f;
+        float margin = 0.1f;
         RaycastHit2D ray = Physics2D.BoxCast(boxCollider2D.bounds.center, boxCollider2D.bounds.size, 0f, Vector2.down, margin, GroundLayer);
         return ray.collider != null;
     }
