@@ -2,29 +2,31 @@
 
 public class EnemyAttack : MonoBehaviour
 {
-    public Transform playerTransform;
     private bool inAttackRange;
-    public float attackRange;
-    public LayerMask playerLayer;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    void OnTriggerEnter2D(Collider2D col)
     {
-        playerTransform = GameObject.Find("Player").GetComponent<Transform>();
-
-        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, attackRange, playerLayer);
-        foreach(Collider2D hit in hits)
+        if(col.gameObject.CompareTag("Player"))
         {
+            inAttackRange = true;
+        }
+        if(col.gameObject.tag != "Player")
+        {
+            inAttackRange = false;
         }
     }
-
-    void OnDrawGizmosSelected()
+    void OnTriggerExit2D(Collider2D col)
     {
-        Gizmos.DrawWireSphere(transform.position, attackRange);
+        inAttackRange = false;
+    }
+
+
+    void Update()
+    {
+        if (inAttackRange)
+        {
+            //attackCode
+        }
+        Debug.Log(inAttackRange);
     }
 }
