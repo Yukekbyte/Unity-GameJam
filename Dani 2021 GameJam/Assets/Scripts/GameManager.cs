@@ -26,12 +26,20 @@ public class GameManager : MonoBehaviour
 
     public void Update() // is called every frame
     {
-        if (Input.GetKeyUp(KeyCode.Escape) && (MenuLayer == 0))
+        if (Input.GetKeyUp(KeyCode.Escape))
         {
-            PauseGame();
-            Main.SetActive(true);
-            MenuLayer = 1;
+            if (MenuLayer == 0)
+            {
+                PauseGame();
+                Main.SetActive(true);
+                MenuLayer = 1;
+            }
+            else
+            {
+                GoBack();
+            }
         }
+        
     }
     
     public void StartGame() // Restarts full game/Switches scene to level 1
