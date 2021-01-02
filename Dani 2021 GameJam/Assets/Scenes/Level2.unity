@@ -204,6 +204,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &759085452 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2106264060521251383, guid: dd0c5ccbe5fe7a44384e7097e00d90ef,
+    type: 3}
+  m_PrefabInstance: {fileID: 3765895448769902818}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08d2d3d20926e9d409cc8d06df8e1fd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1561230587
 GameObject:
   m_ObjectHideFlags: 0
@@ -277,6 +289,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3765895448276256668, guid: dd0c5ccbe5fe7a44384e7097e00d90ef,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3765895448276256668, guid: dd0c5ccbe5fe7a44384e7097e00d90ef,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 759085452}
+    - target: {fileID: 3765895448276256668, guid: dd0c5ccbe5fe7a44384e7097e00d90ef,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GoBack
+      objectReference: {fileID: 0}
+    - target: {fileID: 3765895448276256668, guid: dd0c5ccbe5fe7a44384e7097e00d90ef,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3765895449046669622, guid: dd0c5ccbe5fe7a44384e7097e00d90ef,
         type: 3}
       propertyPath: m_Camera

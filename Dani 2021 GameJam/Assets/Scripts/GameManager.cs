@@ -76,6 +76,7 @@ public class GameManager : MonoBehaviour
         if (MenuLayer == 1 && (SceneManager.GetActiveScene().name != MainMenuSceneName))
         {
             ResumeGame();
+            Main.SetActive(false);
             MenuLayer = 0;
         }
 
