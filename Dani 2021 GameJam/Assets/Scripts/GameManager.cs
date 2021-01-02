@@ -2,14 +2,38 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
-{
-    public GameObject MainMenu;
-    public GameObject SettingsMenu;
-    public void Wake()
-    {
-        DontDestroyOnLoad (gameObject);
-    }
+{   
+    public GameObject Main;
+    public GameObject Settings;
+    int MenuLayer;
+    string MainMenuSceneName = "Menus";
 
+    public void awake()
+    {
+        if (SceneManager.GetActiveScene().name == MainMenuSceneName)
+        {
+            MenuLayer = 1;
+            Main.SetActive(true);
+            Settings.SetActive(false);
+        }
+        else
+        {
+            MenuLayer = 0;
+            Main.SetActive(false);
+            Settings.SetActive(false);
+        }
+    } 
+
+    public void update() // is called every frame
+    {
+        if (Input.GetKeyUp(KeyCode.Escape) && (MenuLayer == 0))
+        {
+            PauseGame();
+            Main.SetActive(true);
+            MenuLayer = 1;
+        }
+    }
+    
     public void StartGame() // Restarts full game/Switches scene to level 1
     {
         SceneManager.LoadScene("Level1");
@@ -18,6 +42,11 @@ public class GameManager : MonoBehaviour
     public void RestartLevel() // Restarts current level
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void LoadNextLevel() //Loads next level
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void PauseGame() // Pauses Game
@@ -32,21 +61,29 @@ public class GameManager : MonoBehaviour
 
     public void OpenSettings() // Opens settings
     {
-        MainMenu.SetActive(false);
-        SettingsMenu.SetActive(true);
+        Main.SetActive(false);
+        Settings.SetActive(true);
+        MenuLayer = 2;
     }
     public void GoBack() // Goes back one step in the UI
     {
-        if (SceneManager.GetActiveScene().name == "Menus")
+        if (MenuLayer == 2)
         {
-            MainMenu.SetActive(true);
-            SettingsMenu.SetActive(false);
+            Main.SetActive(true);
+            Settings.SetActive(false);
+            MenuLayer = 1;
         }
-        else
+        if (MenuLayer == 1 && !(SceneManager.GetActiveScene().name == MainMenuSceneName))
         {
-            Debug.Log("placeholder");
+            ResumeGame();
+            MenuLayer = 0;
         }
 
+    }
+
+    public void GoToMainMenu()
+    {
+        SceneManager.LoadScene(MainMenuSceneName);
     }
 
     public void QuitGame() // Exits Game
