@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class PlayerHealth : MonoBehaviour
+public class EnemyHealth : MonoBehaviour
 {
     public float maxHealth;
     private float health;
@@ -10,12 +10,17 @@ public class PlayerHealth : MonoBehaviour
         health = maxHealth;
     }
 
+    //TakeDamage method with amount needed    vb: TakeDamage(10);
     public void TakeDamage(float amount)
     {
         health -= amount;
+
+        Debug.Log("I took "+amount + " damage!");
+        
+        //Destroys object if health gone
         if(health <= 0)
         {
-            GameObject.FindObjectOfType<GameManager>().RestartLevel();
+            Destroy(gameObject);
         }
     }
 }

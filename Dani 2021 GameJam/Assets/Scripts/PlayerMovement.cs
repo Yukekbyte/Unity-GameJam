@@ -39,7 +39,6 @@ public class PlayerMovement : MonoBehaviour
         //Player faces his direction
         if(dir.x > 0)
         {
-            Debug.Log("yes)");
             transform.localScale = new Vector3(xScale, transform.localScale.y, transform.localScale.z);
         }
         if(dir.x < 0)
