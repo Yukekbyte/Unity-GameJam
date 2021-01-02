@@ -6,15 +6,19 @@ public class PlayerAttack : MonoBehaviour
     public Transform attackPoint;
     public float attackRange;
     public float damage;
+    public float attackRate;
     public LayerMask enemyLayers;
+
     
+    private float nextAttackTime = 0f;
 
     void Update()
     {
         //Attack when left click
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && Time.time >= nextAttackTime)
         {
             Attack();
+            nextAttackTime = Time.time + 1f/attackRate;
         }
     }
 
