@@ -3,22 +3,53 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    void Wake()
+    public GameObject MainMenu;
+    public GameObject SettingsMenu;
+    public void Wake()
     {
         DontDestroyOnLoad (gameObject);
     }
 
-    public void StartGame()
+    public void StartGame() // Restarts full game/Switches scene to level 1
     {
         SceneManager.LoadScene("Level1");
     }
 
-    public void OpenSettings()
+    public void RestartLevel() // Restarts current level
     {
-        Debug.Log("Open Settings");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    public void QuitGame()
+    public void PauseGame() // Pauses Game
+    {
+        Time.timeScale = 0;
+    }
+
+    public void ResumeGame() // Resumes Game
+    {
+        Time.timeScale = 1;
+    }
+
+    public void OpenSettings() // Opens settings
+    {
+        MainMenu.SetActive(false);
+        SettingsMenu.SetActive(true);
+    }
+    public void GoBack() // Goes back one step in the UI
+    {
+        if (SceneManager.GetActiveScene().name == "Menus")
+        {
+            MainMenu.SetActive(true);
+            SettingsMenu.SetActive(false);
+        }
+        else
+        {
+            Debug.Log("placeholder");
+        }
+
+    }
+
+    public void QuitGame() // Exits Game
     {
         Application.Quit();
     }
