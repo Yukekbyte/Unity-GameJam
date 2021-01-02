@@ -7,11 +7,15 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce;
     public BoxCollider2D boxCollider2D;
     public LayerMask GroundLayer;
+    public SpriteRenderer spriteRenderer;
+    private float xScale;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         boxCollider2D = GetComponent<BoxCollider2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        xScale = transform.localScale.x;
     }
 
     void Update()
@@ -31,6 +35,16 @@ public class PlayerMovement : MonoBehaviour
 
         //Walk
         Walk(dir);
+
+        //Player faces his direction
+        if(dir.x > 0)
+        {
+            transform.localScale = new Vector3(xScale, transform.localScale.y, transform.localScale.z);
+        }
+        if(dir.x < 0)
+        {
+            transform.localScale = new Vector3(-xScale, transform.localScale.y, transform.localScale.z);
+        }
     }
     
     //Walk method met een direction (dir) nodig
