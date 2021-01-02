@@ -45,11 +45,14 @@ public class GameManager : MonoBehaviour
     public void StartGame() // Restarts full game/Switches scene to level 1
     {
         SceneManager.LoadScene("Level1");
+        Time.timeScale = 1;
+
     }
 
     public void RestartLevel() // Restarts current level
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        ResumeGame();
     }
 
     public void LoadNextLevel() //Loads next level
@@ -87,7 +90,6 @@ public class GameManager : MonoBehaviour
             Main.SetActive(false);
             MenuLayer = 0;
         }
-
     }
 
     public void GoToMainMenu()

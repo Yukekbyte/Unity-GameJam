@@ -10,18 +10,22 @@ public class EnemyAttack : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.CompareTag("Player"))
+        Debug.Log(".................................");
+        Debug.Log(col.GetType());
+        Debug.Log(typeof(BoxCollider2D));
+        Debug.Log(".....................");
+        if ((col.gameObject.CompareTag("Player")) && (col.GetType() == typeof(BoxCollider2D)))
         {
             inAttackRange = true;
-        }
-        if (col.gameObject.tag != "Player")
-        {
-            inAttackRange = false;
+            Debug.Log("attacking player");
         }
     }
     void OnTriggerExit2D(Collider2D col)
-    {
+    {  
+        if ((col.gameObject.CompareTag("Player")) && (col.GetType() == typeof(BoxCollider2D)))
+        {
         inAttackRange = false;
+        }
     }
 
 
