@@ -73,9 +73,10 @@ public class GameManager : MonoBehaviour
             Settings.SetActive(false);
             MenuLayer = 1;
         }
-        if (MenuLayer == 1 && !(SceneManager.GetActiveScene().name == MainMenuSceneName))
+        if (MenuLayer == 1 && (SceneManager.GetActiveScene().name != MainMenuSceneName))
         {
             ResumeGame();
+            Main.SetActive(false);
             MenuLayer = 0;
         }
 
