@@ -29,9 +29,12 @@ public class PlayerAttack : MonoBehaviour
         //Each enemy in the sphere takes damage with damage amount specified as public float
         foreach(Collider2D enemy in hitEnemies)
         {
-            enemy.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage);
+            if (enemy.CompareTag("Enemy"))
+                enemy.GetComponent<EnemyHealth>().TakeDamage(damage);
         }
     }
+
+    //Draws attack sphere in scene for easy of use
     void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);

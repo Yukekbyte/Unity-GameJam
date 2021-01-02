@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 866337929031879379}
   m_Layer: 9
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -146,6 +146,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 524f6bbb2a354834b80ea43d87be5487, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 6136173719975786821}
+  damage: 1
+  attackCooldown: 3
 --- !u!114 &866337929031879379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,6 +229,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2860873119835024088}
   - component: {fileID: 2974586692532298785}
+  - component: {fileID: 6136173719975786821}
   m_Layer: 0
   m_Name: Sword
   m_TagString: Untagged
@@ -297,3 +301,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!111 &6136173719975786821
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3120062116038767070}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 699ca6c748de50d4197956ae3ee6deaa, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 699ca6c748de50d4197956ae3ee6deaa, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
