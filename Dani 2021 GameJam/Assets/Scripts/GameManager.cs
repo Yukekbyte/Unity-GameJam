@@ -20,6 +20,16 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+    public void PauseGame() // Pauses Game
+    {
+        Time.timeScale = 0;
+    }
+
+    public void ResumeGame() // Resumes Game
+    {
+        Time.timeScale = 1;
+    }
+
     public void OpenSettings() // Opens settings
     {
         MainMenu.SetActive(false);
