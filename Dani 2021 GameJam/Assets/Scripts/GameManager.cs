@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     int MenuLayer;
     string MainMenuSceneName = "Menus";
 
-    public void awake()
+    public void Start()
     {
         if (SceneManager.GetActiveScene().name == MainMenuSceneName)
         {
@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
         }
     } 
 
-    public void update() // is called every frame
+    public void Update() // is called every frame
     {
         if (Input.GetKeyUp(KeyCode.Escape) && (MenuLayer == 0))
         {

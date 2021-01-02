@@ -2139,9 +2139,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2988650681294593485, guid: 97da91b1629370d4ca531348e98127fb,
         type: 3}
+      propertyPath: Main
+      value: 
+      objectReference: {fileID: 2107786659}
+    - target: {fileID: 2988650681294593485, guid: 97da91b1629370d4ca531348e98127fb,
+        type: 3}
       propertyPath: MainMenu
       value: 
       objectReference: {fileID: 2107786659}
+    - target: {fileID: 2988650681294593485, guid: 97da91b1629370d4ca531348e98127fb,
+        type: 3}
+      propertyPath: Settings
+      value: 
+      objectReference: {fileID: 1656778267}
     - target: {fileID: 2988650681294593485, guid: 97da91b1629370d4ca531348e98127fb,
         type: 3}
       propertyPath: SettingsMenu
