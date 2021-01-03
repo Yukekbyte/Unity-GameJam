@@ -307,7 +307,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 2.2
+  m_GravityScale: 5.1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -325,10 +325,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 495b2e3c18d3ea148b83e7c84efd9b35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
   playerSpeed: 500
-  jumpForce: 12
+  jumpForce: 18.9
   slideSpeed: 350
+  wallJumpForce: 2000
+  rb: {fileID: 0}
   boxCollider2D: {fileID: 0}
   groundLayer:
     serializedVersion: 2

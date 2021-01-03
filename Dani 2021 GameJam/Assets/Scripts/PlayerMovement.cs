@@ -2,16 +2,19 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public Rigidbody2D rb;
     public float playerSpeed;
     public float jumpForce;
     public float slideSpeed;
+    public float wallJumpForce;
+    public Rigidbody2D rb;
     public BoxCollider2D boxCollider2D;
     public LayerMask groundLayer;
     public SpriteRenderer spriteRenderer;
     private float collisionRadius = 0.1f;
     private float xScale;
     private bool onWall;
+    private bool onWallLeft;
+    private bool onWallRight;
 
     void Awake()
     {
@@ -26,30 +29,42 @@ public class PlayerMovement : MonoBehaviour
         //Jump
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            //als de speler alleen op de grond staat jumpt hij normaal
             if (IsGrounded())
-                Jump(jumpForce);
-            else if (onWall)
             {
-                //WallJump code
+                Jump(jumpForce);
+            }
+            //bij een wallslide springt de speler ook weg van de muur
+            else if (onWallRight)
+            {
+                rb.velocity = new Vector2(wallJumpForce, jumpForce);
+            }
+            else if (onWallLeft)
+            {
+                rb.velocity = new Vector2(-wallJumpForce, jumpForce);
             }
         }
 
-        //Check if OnWall
-        onWall = Physics2D.OverlapCircle((Vector2)transform.position + boxCollider2D.size.x/2 * Vector2.right, collisionRadius, groundLayer)
-                || Physics2D.OverlapCircle((Vector2)transform.position - boxCollider2D.size.x/2 * Vector2.right, collisionRadius, groundLayer);
-        
+        //Check if onWall with circles
+        onWallRight = Physics2D.OverlapCircle((Vector2)transform.position + boxCollider2D.size.x/2 * Vector2.right - 0.4f * boxCollider2D.size.y * Vector2.up, collisionRadius, groundLayer) && Physics2D.OverlapCircle((Vector2)transform.position + boxCollider2D.size.x/2 * Vector2.right + 0.1f * boxCollider2D.size.y * Vector2.up, collisionRadius, groundLayer);
+        onWallLeft = Physics2D.OverlapCircle((Vector2)transform.position - boxCollider2D.size.x/2 * Vector2.right - 0.4f * boxCollider2D.size.y * Vector2.up, collisionRadius, groundLayer) && Physics2D.OverlapCircle((Vector2)transform.position - boxCollider2D.size.x/2 * Vector2.right + 0.1f * boxCollider2D.size.y * Vector2.up, collisionRadius, groundLayer);
+        onWall = onWallLeft || onWallRight;
+
+        //Wallside wanneer de speler op de muur is en niet de grond
         if (onWall && !IsGrounded() && rb.velocity.y < 0)
         {
             WallSlide();
         }
     }
-    /* Gizmos om de cirkels die onWall bepalen te tekenen op je scherm
-       void OnDrawGizmosSelected()
+    //Gizmos om de cirkels die onWall bepalen te tekenen op je scherm
+    /*
+    void OnDrawGizmosSelected()
     {
-        Gizmos.DrawWireSphere((Vector2)transform.position + boxCollider2D.size.x/2 * Vector2.right, collisionRadius);
-        Gizmos.DrawWireSphere((Vector2)transform.position - boxCollider2D.size.x/2 * Vector2.right, collisionRadius);
+        Gizmos.DrawWireSphere((Vector2)transform.position + boxCollider2D.size.x/2 * Vector2.right + 0.1f * boxCollider2D.size.y * Vector2.up, collisionRadius);
+        Gizmos.DrawWireSphere((Vector2)transform.position + boxCollider2D.size.x/2 * Vector2.right - 0.4f * boxCollider2D.size.y * Vector2.up, collisionRadius);
     }
     */
+    
     void FixedUpdate()
     {
         //Player Input
@@ -76,11 +91,13 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.velocity = new Vector2(dir.x * playerSpeed * Time.deltaTime, rb.velocity.y);
     }
-    //Dash method In Progress
+    
+    //Dash method
     void Dash()
     {
         //In Progress
     }
+
     //Wallslide
     void WallSlide()
     {
