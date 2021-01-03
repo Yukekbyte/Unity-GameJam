@@ -27,17 +27,26 @@ public class EnemyHealth : MonoBehaviour
 
     public void Die()
     {
-        gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
-        gameObject.GetComponent<EnemyMovement>().enabled = false;
-        gameObject.GetComponent<EnemyAttack>().enabled = false;
+        //Enemy doesn't move
         gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
         gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+
+        //Removing unneeded scripts
+        Destroy(GetComponent<EnemyAttack>());
+        Destroy(GetComponent<EnemyMovement>());
+        
+        //Boxcollider and sprite change
+        gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
         gameObject.GetComponent<SpriteRenderer>().sprite = enemyDeadSprite;
-            
-        //Destory enemy Sword
+
+        //Add new script for when the enemy is dead
+        gameObject.AddComponent<EnemyConsume>();
+
+        //Destory enemy Children
         foreach (Transform child in transform)
         {
-            Destroy(child.gameObject);
+            if(child.name != "Canvas")
+                Destroy(child.gameObject);
         }
     }
 }
