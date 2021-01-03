@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8baac11a3b972a43aeb7e51b27df036, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 5
+  maxHealth: 2
   enemyDeadSprite: {fileID: 21300000, guid: c99279a56ca69d74daec9944590c76dd, type: 3}
 --- !u!114 &5920066299433878785
 MonoBehaviour:
