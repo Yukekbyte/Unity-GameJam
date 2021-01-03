@@ -5,10 +5,13 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
     public float playerSpeed;
     public float jumpForce;
+    public float slideSpeed;
     public BoxCollider2D boxCollider2D;
-    public LayerMask GroundLayer;
+    public LayerMask groundLayer;
     public SpriteRenderer spriteRenderer;
+    private float collisionRadius = 0.1f;
     private float xScale;
+    private bool onWall;
 
     void Awake()
     {
@@ -21,11 +24,32 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         //Jump
-        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            Jump(jumpForce);
+            if (IsGrounded())
+                Jump(jumpForce);
+            else if (onWall)
+            {
+                //WallJump code
+            }
+        }
+
+        //Check if OnWall
+        onWall = Physics2D.OverlapCircle((Vector2)transform.position + boxCollider2D.size.x/2 * Vector2.right, collisionRadius, groundLayer)
+                || Physics2D.OverlapCircle((Vector2)transform.position - boxCollider2D.size.x/2 * Vector2.right, collisionRadius, groundLayer);
+        
+        if (onWall && !IsGrounded() && rb.velocity.y < 0)
+        {
+            WallSlide();
         }
     }
+    /* Gizmos om de cirkels die onWall bepalen te tekenen op je scherm
+       void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere((Vector2)transform.position + boxCollider2D.size.x/2 * Vector2.right, collisionRadius);
+        Gizmos.DrawWireSphere((Vector2)transform.position - boxCollider2D.size.x/2 * Vector2.right, collisionRadius);
+    }
+    */
     void FixedUpdate()
     {
         //Player Input
@@ -57,6 +81,11 @@ public class PlayerMovement : MonoBehaviour
     {
         //In Progress
     }
+    //Wallslide
+    void WallSlide()
+    {
+        rb.velocity = new Vector2(rb.velocity.x, -slideSpeed * Time.deltaTime);
+    }
 
     //Jump method met een jumpforce nodig
     void Jump(float jumpForce)
@@ -70,7 +99,7 @@ public class PlayerMovement : MonoBehaviour
         //Stuurt een ray van het midden van de speler naar beneden tot de rand van de boxcollider + margin
         //returns true wanneer de ray een object met groundlayer raakt, anders false
         float margin = 0.1f;
-        RaycastHit2D ray = Physics2D.BoxCast(boxCollider2D.bounds.center, boxCollider2D.bounds.size, 0f, Vector2.down, margin, GroundLayer);
+        RaycastHit2D ray = Physics2D.BoxCast(boxCollider2D.bounds.center, boxCollider2D.bounds.size, 0f, Vector2.down, margin, groundLayer);
         return ray.collider != null;
     }
 }

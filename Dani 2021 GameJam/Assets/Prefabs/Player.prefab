@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6449418671561586027
 Transform:
   m_ObjectHideFlags: 0
@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4226734274323141594}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.8835201, y: 0.060832024, z: -1.767559}
+  m_LocalPosition: {x: -0.029, y: -0.27, z: -1.767559}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5274821967573254276}
@@ -191,6 +191,7 @@ GameObject:
   - component: {fileID: 5274821967573254282}
   - component: {fileID: 5274821967573254272}
   - component: {fileID: 8928739124835314500}
+  - component: {fileID: -7143226957824741279}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -327,8 +328,9 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerSpeed: 500
   jumpForce: 12
+  slideSpeed: 350
   boxCollider2D: {fileID: 0}
-  GroundLayer:
+  groundLayer:
     serializedVersion: 2
     m_Bits: 256
   spriteRenderer: {fileID: 0}
@@ -384,3 +386,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-7143226957824741279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5274821967573254281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed5a09d487ff5a54d8c1354b492f66fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  souls: 0

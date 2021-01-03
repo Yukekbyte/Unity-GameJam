@@ -5,6 +5,7 @@ public class EnemyHealth : MonoBehaviour
     public float maxHealth;
     private float health;
     public Sprite enemyDeadSprite;
+    private bool dead = false;
 
     void Awake()
     {
@@ -14,14 +15,18 @@ public class EnemyHealth : MonoBehaviour
     //TakeDamage method with amount needed    vb: TakeDamage(10);
     public void TakeDamage(float amount)
     {
-        health -= amount;
-
-        Debug.Log("I took "+amount + " damage!");
-        
-        //Destroys object if health gone
-        if(health <= 0)
+        if (!dead)
         {
-            Die();
+            health -= amount;
+
+            Debug.Log("I took "+amount + " damage!");
+            
+            //Destroys object if health gone and not dead yet
+            if(health <= 0 && !dead)
+            {
+                Die();
+                dead = true;
+            }
         }
     }
 

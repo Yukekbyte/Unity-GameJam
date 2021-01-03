@@ -1,29 +1,38 @@
 ﻿using UnityEngine;
-using TMPro;
 
 public class EnemyConsume : MonoBehaviour
 {
-    public GameObject canvas;
-    public GameObject can;
+    public GameObject enemyTextCanvas;
+    private bool onPlayer;
 
     void Awake()
     {
-        canvas = this.gameObject.transform.GetChild(0).gameObject;
+        enemyTextCanvas = GameObject.Find("EnemyTextCanvas");
     }
-    // Update is called once per frame
-    void Update()
+
+    // ***DO NOT TOUCH*** Warning: fragile code ahead
+    void OnTriggerStay2D()
     {
-    
-    }
-    
-    void OnTriggerEnter2D()
-    {
-        canvas.SetActive(true);
-        Debug.Log("Consume me");
+        enemyTextCanvas.transform.position = transform.position;
+        onPlayer = true;
     }
     void OnTriggerExit2D()
     {
-        canvas.SetActive(false);
-        Debug.Log("nevermind");
+        Invoke("Exit",0.3f);
+    }
+    void Exit()
+    {
+        enemyTextCanvas.transform.position = new Vector3(100,100,0);
+        onPlayer = false;
+    }
+
+    public void Destroy()
+    {   
+        if(onPlayer)
+        {
+            Destroy(gameObject);
+            enemyTextCanvas.transform.position = new Vector3(100,100,0);
+            GameObject.Find("Player").GetComponent<PlayerAbilities>().AddSoul();
+        }
     }
 }
