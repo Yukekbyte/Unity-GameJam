@@ -178,13 +178,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 866337929031879400}
   Player: {fileID: 5274821967573254281, guid: b45836895fb4f97458e3a24ff023f9b6, type: 3}
-  boxCollider2D: {fileID: 0}
+  boxCollider2D: {fileID: 866337929031879407}
   GroundLayer:
     serializedVersion: 2
     m_Bits: 0
-  EnemySpeed: 0
-  RoamRadius: 0
-  VisionRadius: 0
+  EnemySpeed: 5
+  RoamRadius: 2
+  VisionRadius: 2
   StartRight: 0
 --- !u!1 &1131423281657326214
 GameObject:
@@ -382,7 +382,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
