@@ -600,7 +600,7 @@ GameObject:
   - component: {fileID: 1622110024}
   - component: {fileID: 1622110023}
   m_Layer: 0
-  m_Name: Background
+  m_Name: New Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -849,11 +849,7 @@ TilemapRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
-<<<<<<< Updated upstream
   m_ChunkCullingBounds: {x: 0.03333336, y: 0.03333336, z: 0}
-=======
-  m_ChunkCullingBounds: {x: 0.127451, y: 0.127451, z: 0}
->>>>>>> Stashed changes
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
@@ -1952,21 +1948,12 @@ Tilemap:
   - first: {x: 10, y: -5, z: 0}
     second:
       serializedVersion: 2
-<<<<<<< Updated upstream
       m_TileIndex: 26
       m_TileSpriteIndex: 26
       m_TileMatrixIndex: 0
       m_TileColorIndex: 8
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
-=======
-      m_TileIndex: 29
-      m_TileSpriteIndex: 29
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 8
-      m_TileObjectToInstantiateIndex: 65535
-      m_AllTileFlags: 1
->>>>>>> Stashed changes
   - first: {x: 11, y: -5, z: 0}
     second:
       serializedVersion: 2
@@ -2057,15 +2044,6 @@ Tilemap:
       m_TileColorIndex: 8
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
-  - first: {x: -20, y: -4, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 31
-      m_TileSpriteIndex: 31
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 8
-      m_TileObjectToInstantiateIndex: 65535
-      m_AllTileFlags: 1
   - first: {x: 11, y: -4, z: 0}
     second:
       serializedVersion: 2
@@ -2375,21 +2353,12 @@ Tilemap:
   - first: {x: -4, y: 0, z: 0}
     second:
       serializedVersion: 2
-<<<<<<< Updated upstream
       m_TileIndex: 26
       m_TileSpriteIndex: 26
       m_TileMatrixIndex: 0
       m_TileColorIndex: 8
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
-=======
-      m_TileIndex: 29
-      m_TileSpriteIndex: 29
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 8
-      m_TileObjectToInstantiateIndex: 65535
-      m_AllTileFlags: 1
->>>>>>> Stashed changes
   - first: {x: -3, y: 0, z: 0}
     second:
       serializedVersion: 2
@@ -2759,15 +2728,6 @@ Tilemap:
       m_TileColorIndex: 8
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
-  - first: {x: 8, y: 5, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 30
-      m_TileSpriteIndex: 30
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 8
-      m_TileObjectToInstantiateIndex: 65535
-      m_AllTileFlags: 1
   - first: {x: 20, y: 5, z: 0}
     second:
       serializedVersion: 2
@@ -2885,33 +2845,6 @@ Tilemap:
       m_TileColorIndex: 8
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
-  - first: {x: 2, y: 7, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 28
-      m_TileSpriteIndex: 28
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 8
-      m_TileObjectToInstantiateIndex: 65535
-      m_AllTileFlags: 1
-  - first: {x: 8, y: 7, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 28
-      m_TileSpriteIndex: 28
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 8
-      m_TileObjectToInstantiateIndex: 65535
-      m_AllTileFlags: 1
-  - first: {x: 14, y: 7, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 28
-      m_TileSpriteIndex: 28
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 8
-      m_TileObjectToInstantiateIndex: 65535
-      m_AllTileFlags: 1
   - first: {x: 20, y: 7, z: 0}
     second:
       serializedVersion: 2
@@ -2948,42 +2881,6 @@ Tilemap:
       m_TileColorIndex: 8
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
-  - first: {x: -18, y: 8, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 28
-      m_TileSpriteIndex: 28
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 8
-      m_TileObjectToInstantiateIndex: 65535
-      m_AllTileFlags: 1
-  - first: {x: 2, y: 8, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 27
-      m_TileSpriteIndex: 27
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 8
-      m_TileObjectToInstantiateIndex: 65535
-      m_AllTileFlags: 1
-  - first: {x: 8, y: 8, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 27
-      m_TileSpriteIndex: 27
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 8
-      m_TileObjectToInstantiateIndex: 65535
-      m_AllTileFlags: 1
-  - first: {x: 14, y: 8, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 27
-      m_TileSpriteIndex: 27
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 8
-      m_TileObjectToInstantiateIndex: 65535
-      m_AllTileFlags: 1
   - first: {x: 20, y: 8, z: 0}
     second:
       serializedVersion: 2
@@ -3020,7 +2917,6 @@ Tilemap:
       m_TileColorIndex: 8
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
-<<<<<<< Updated upstream
   - first: {x: -22, y: 10, z: 0}
     second:
       serializedVersion: 2
@@ -3030,44 +2926,6 @@ Tilemap:
       m_TileColorIndex: 8
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
-=======
-  - first: {x: -18, y: 9, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 27
-      m_TileSpriteIndex: 27
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 8
-      m_TileObjectToInstantiateIndex: 65535
-      m_AllTileFlags: 1
-  - first: {x: 2, y: 9, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 27
-      m_TileSpriteIndex: 27
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 8
-      m_TileObjectToInstantiateIndex: 65535
-      m_AllTileFlags: 1
-  - first: {x: 8, y: 9, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 27
-      m_TileSpriteIndex: 27
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 8
-      m_TileObjectToInstantiateIndex: 65535
-      m_AllTileFlags: 1
-  - first: {x: 14, y: 9, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 27
-      m_TileSpriteIndex: 27
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 8
-      m_TileObjectToInstantiateIndex: 65535
-      m_AllTileFlags: 1
->>>>>>> Stashed changes
   - first: {x: -21, y: 10, z: 0}
     second:
       serializedVersion: 2
@@ -3077,7 +2935,6 @@ Tilemap:
       m_TileColorIndex: 8
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
-<<<<<<< Updated upstream
   - first: {x: -22, y: 11, z: 0}
     second:
       serializedVersion: 2
@@ -3087,53 +2944,6 @@ Tilemap:
       m_TileColorIndex: 8
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
-=======
-  - first: {x: -18, y: 10, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 26
-      m_TileSpriteIndex: 26
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 8
-      m_TileObjectToInstantiateIndex: 65535
-      m_AllTileFlags: 1
-  - first: {x: -11, y: 10, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 30
-      m_TileSpriteIndex: 30
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 8
-      m_TileObjectToInstantiateIndex: 65535
-      m_AllTileFlags: 1
-  - first: {x: 2, y: 10, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 26
-      m_TileSpriteIndex: 26
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 8
-      m_TileObjectToInstantiateIndex: 65535
-      m_AllTileFlags: 1
-  - first: {x: 8, y: 10, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 26
-      m_TileSpriteIndex: 26
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 8
-      m_TileObjectToInstantiateIndex: 65535
-      m_AllTileFlags: 1
-  - first: {x: 14, y: 10, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 26
-      m_TileSpriteIndex: 26
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 8
-      m_TileObjectToInstantiateIndex: 65535
-      m_AllTileFlags: 1
->>>>>>> Stashed changes
   - first: {x: -21, y: 11, z: 0}
     second:
       serializedVersion: 2
@@ -3575,23 +3385,8 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: b4d7642d7a8fcfb46bd2bfe6238158d2, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 24fbd41640f249d41a292ac71cc33790, type: 2}
-<<<<<<< Updated upstream
   - m_RefCount: 3
     m_Data: {fileID: 11400000, guid: 38acc2d1d98771141ac0262e36d01dff, type: 2}
-=======
-  - m_RefCount: 4
-    m_Data: {fileID: 11400000, guid: b04829a4f5b977e468b214a608843bd4, type: 2}
-  - m_RefCount: 7
-    m_Data: {fileID: 11400000, guid: 32b84e47d18eb0e48829c2b414eec380, type: 2}
-  - m_RefCount: 4
-    m_Data: {fileID: 11400000, guid: 1d91e17d1e902474db58aca378dc0e32, type: 2}
-  - m_RefCount: 2
-    m_Data: {fileID: 11400000, guid: 38acc2d1d98771141ac0262e36d01dff, type: 2}
-  - m_RefCount: 2
-    m_Data: {fileID: 11400000, guid: e238a2af25bd1c54f96949cef73a390e, type: 2}
-  - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: 24472b232cc970b458a90fd6ef11e920, type: 2}
->>>>>>> Stashed changes
   m_TileSpriteArray:
   - m_RefCount: 4
     m_Data: {fileID: 21300000, guid: 9bea691e2bf4bf74daffd031e13bcc3b, type: 3}
@@ -3645,27 +3440,10 @@ Tilemap:
     m_Data: {fileID: 21300000, guid: 0aaced3667b1b5c4cb3521b8cbfe7719, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: 12c6c5d788e23884098d377b57bc9127, type: 3}
-<<<<<<< Updated upstream
   - m_RefCount: 3
     m_Data: {fileID: 21300000, guid: 174852a63393fb246abee4fbe7a8b04b, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 274
-=======
-  - m_RefCount: 4
-    m_Data: {fileID: 21300000, guid: c31ae8591c5376445844fa45792b2897, type: 3}
-  - m_RefCount: 7
-    m_Data: {fileID: 21300000, guid: dfdad1f8b2ed7d146bba6c4a34695b82, type: 3}
-  - m_RefCount: 4
-    m_Data: {fileID: 21300000, guid: 208be1f96aafca6429284e8bf11f263b, type: 3}
-  - m_RefCount: 2
-    m_Data: {fileID: 21300000, guid: 174852a63393fb246abee4fbe7a8b04b, type: 3}
-  - m_RefCount: 2
-    m_Data: {fileID: 21300000, guid: 25cd1b4aeea0e634892996c023269c2f, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 21300000, guid: 178d14b170e3d8b4abf3fa6d51ef2362, type: 3}
-  m_TileMatrixArray:
-  - m_RefCount: 247
->>>>>>> Stashed changes
     m_Data:
       e00: 1
       e01: 0
@@ -3707,11 +3485,7 @@ Tilemap:
   - m_RefCount: 0
     m_Data: {r: -0.0000000011185897, g: -0.0000000011185897, b: -0.0000000011185897,
       a: -0.0000000011185897}
-<<<<<<< Updated upstream
   - m_RefCount: 274
-=======
-  - m_RefCount: 247
->>>>>>> Stashed changes
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -3773,39 +3547,12 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 2132701850}
     m_ColliderPaths:
-<<<<<<< Updated upstream
     - - X: -209999900
         Y: -78750041
       - X: -209999900
         Y: -78750000
       - X: -200312496
         Y: -78750000
-=======
-    - - X: -200312496
-        Y: -34400100
-      - X: -200333369
-        Y: -34400100
-      - X: -200333428
-        Y: -34400041
-      - X: -200333428
-        Y: -32266625
-      - X: -200333369
-        Y: -32266566
-      - X: -200312496
-        Y: -32266566
-      - X: -200312496
-        Y: -30420974
-      - X: -200333413
-        Y: -30400057
-      - X: -200333428
-        Y: -30400020
-      - X: -200333428
-        Y: -29666625
-      - X: -200333369
-        Y: -29666566
-      - X: -200312496
-        Y: -29666566
->>>>>>> Stashed changes
       - X: -200312496
         Y: 31250000
       - X: -120312496
@@ -3816,143 +3563,7 @@ CompositeCollider2D:
         Y: 36875000
       - X: -200312496
         Y: 111250000
-<<<<<<< Updated upstream
       - X: 209999900
-=======
-      - X: -177562596
-        Y: 111250000
-      - X: -177562596
-        Y: 111250041
-      - X: -177562537
-        Y: 111250100
-      - X: -172437463
-        Y: 111250100
-      - X: -172437404
-        Y: 111250041
-      - X: -172437404
-        Y: 111250000
-      - X: -127562604
-        Y: 111250000
-      - X: -127562604
-        Y: 111250041
-      - X: -127562545
-        Y: 111250100
-      - X: -122437455
-        Y: 111250100
-      - X: -122437396
-        Y: 111250041
-      - X: -122437396
-        Y: 111250000
-      - X: -106647164
-        Y: 111250000
-      - X: -106647164
-        Y: 111274553
-      - X: -106647105
-        Y: 111274612
-      - X: -103745060
-        Y: 111274612
-      - X: -103745005
-        Y: 111274567
-      - X: -103740092
-        Y: 111250000
-      - X: -77562604
-        Y: 111250000
-      - X: -77562604
-        Y: 111250041
-      - X: -77562545
-        Y: 111250100
-      - X: -72437463
-        Y: 111250100
-      - X: -72437404
-        Y: 111250041
-      - X: -72437404
-        Y: 111250000
-      - X: 12437400
-        Y: 111250000
-      - X: 12437400
-        Y: 111250041
-      - X: 12437459
-        Y: 111250100
-      - X: 17562541
-        Y: 111250100
-      - X: 17562600
-        Y: 111250041
-      - X: 17562600
-        Y: 111250000
-      - X: 22437400
-        Y: 111250000
-      - X: 22437400
-        Y: 111250041
-      - X: 22437459
-        Y: 111250100
-      - X: 27562541
-        Y: 111250100
-      - X: 27562600
-        Y: 111250041
-      - X: 27562600
-        Y: 111250000
-      - X: 32437400
-        Y: 111250000
-      - X: 32437400
-        Y: 111250041
-      - X: 32437459
-        Y: 111250100
-      - X: 37562541
-        Y: 111250100
-      - X: 37562600
-        Y: 111250041
-      - X: 37562600
-        Y: 111250000
-      - X: 82437396
-        Y: 111250000
-      - X: 82437396
-        Y: 111250041
-      - X: 82437455
-        Y: 111250100
-      - X: 87562545
-        Y: 111250100
-      - X: 87562604
-        Y: 111250041
-      - X: 87562604
-        Y: 111250000
-      - X: 112437396
-        Y: 111250000
-      - X: 112437396
-        Y: 111250041
-      - X: 112437455
-        Y: 111250100
-      - X: 117562545
-        Y: 111250100
-      - X: 117562604
-        Y: 111250041
-      - X: 117562604
-        Y: 111250000
-      - X: 142437404
-        Y: 111250000
-      - X: 142437404
-        Y: 111250041
-      - X: 142437463
-        Y: 111250100
-      - X: 147562537
-        Y: 111250100
-      - X: 147562596
-        Y: 111250041
-      - X: 147562596
-        Y: 111250000
-      - X: 162437404
-        Y: 111250000
-      - X: 162437404
-        Y: 111250041
-      - X: 162437463
-        Y: 111250100
-      - X: 167562537
-        Y: 111250100
-      - X: 167562596
-        Y: 111250041
-      - X: 167562596
-        Y: 111250000
-      - X: 210000000
->>>>>>> Stashed changes
         Y: 111250000
       - X: 209999900
         Y: 111249959
@@ -3974,7 +3585,6 @@ CompositeCollider2D:
         Y: 120000000
       - X: -209999900
         Y: 120000000
-<<<<<<< Updated upstream
       - X: -209999900
         Y: 120000041
       - X: -209999959
@@ -4022,97 +3632,6 @@ CompositeCollider2D:
       - X: 209999900
         Y: 86875041
       - X: 209999900
-=======
-      - X: -210000000
-        Y: -78750000
-      - X: -200312496
-        Y: -78750000
-    - - X: -103899947
-        Y: 100899913
-      - X: -102899917
-        Y: 101799940
-      - X: -102899900
-        Y: 101799979
-      - X: -102899900
-        Y: 105800014
-      - X: -102899908
-        Y: 105800041
-      - X: -104299925
-        Y: 108050069
-      - X: -104299955
-        Y: 108050091
-      - X: -104652801
-        Y: 108146321
-      - X: -104882221
-        Y: 107509867
-      - X: -104450931
-        Y: 107392251
-      - X: -104450901
-        Y: 107392229
-      - X: -103352844
-        Y: 105627489
-      - X: -103352836
-        Y: 105627462
-      - X: -103352836
-        Y: 102490179
-      - X: -103352853
-        Y: 102490140
-      - X: -104137203
-        Y: 101784225
-      - X: -104137237
-        Y: 101784212
-      - X: -106254919
-        Y: 101784212
-      - X: -106254948
-        Y: 101784221
-      - X: -106764768
-        Y: 102137171
-      - X: -106764781
-        Y: 102137183
-      - X: -107039307
-        Y: 102529363
-      - X: -107039316
-        Y: 102529393
-      - X: -107039316
-        Y: 105392169
-      - X: -107039313
-        Y: 105392186
-      - X: -106725588
-        Y: 106254944
-      - X: -106725582
-        Y: 106254956
-      - X: -105941277
-        Y: 107392201
-      - X: -105509928
-        Y: 109156794
-      - X: -105903323
-        Y: 109264083
-      - X: -106200093
-        Y: 108050041
-      - X: -107200086
-        Y: 106600052
-      - X: -107200092
-        Y: 106600040
-      - X: -107600097
-        Y: 105500026
-      - X: -107600100
-        Y: 105500009
-      - X: -107600100
-        Y: 101849993
-      - X: -107600091
-        Y: 101849963
-      - X: -107250077
-        Y: 101349935
-      - X: -107250064
-        Y: 101349923
-      - X: -106600044
-        Y: 100899909
-      - X: -106600015
-        Y: 100899900
-      - X: -103899981
-        Y: 100899900
-    - - X: 210000000
->>>>>>> Stashed changes
         Y: 86843752
       - X: 200312496
         Y: 86875000
@@ -4214,99 +3733,19 @@ CompositeCollider2D:
         Y: -120000100
     - - X: -170000000
         Y: 80000000
-      - X: -173687404
-        Y: 80000000
-      - X: -173687404
-        Y: 79374980
-      - X: -173687419
-        Y: 79374943
-      - X: -174312439
-        Y: 78749915
-      - X: -174312476
-        Y: 78749900
-      - X: -176000026
-        Y: 78749900
-      - X: -176000071
-        Y: 78749925
-      - X: -176312588
-        Y: 79249959
-      - X: -176312596
-        Y: 79249986
-      - X: -176312596
-        Y: 80000000
       - X: -180000000
         Y: 80000000
       - X: -180000000
         Y: 70000000
       - X: -170000000
         Y: 70000000
-<<<<<<< Updated upstream
     - - X: 89687504
-=======
-    - - X: -174781348
-        Y: 79375020
-      - X: -174781333
-        Y: 79375057
-      - X: -174687561
-        Y: 79468837
-      - X: -174687524
-        Y: 79468852
-      - X: -174468852
-        Y: 79468852
-      - X: -174468852
-        Y: 80000000
-      - X: -175531148
-        Y: 80000000
-      - X: -175531148
-        Y: 79468852
-      - X: -175312476
-        Y: 79468852
-      - X: -175312439
-        Y: 79468837
-      - X: -175218667
-        Y: 79375057
-      - X: -175218652
-        Y: 79375020
-      - X: -175218652
-        Y: 79156348
-      - X: -174781348
-        Y: 79156348
-    - - X: 82437396
-        Y: 61250041
-      - X: 82437455
-        Y: 61250100
-      - X: 83352844
-        Y: 61250100
-      - X: 83352844
-        Y: 61274549
-      - X: 83352903
-        Y: 61274608
-      - X: 86254940
-        Y: 61274608
-      - X: 86254995
-        Y: 61274563
-      - X: 86259888
-        Y: 61250100
-      - X: 87562545
-        Y: 61250100
-      - X: 87562604
-        Y: 61250041
-      - X: 87562604
-        Y: 61250000
-      - X: 89656248
-        Y: 61250000
-      - X: 89687504
->>>>>>> Stashed changes
         Y: 66875000
       - X: 80312496
         Y: 66875000
       - X: 80312496
         Y: 61250000
-<<<<<<< Updated upstream
       - X: 89656248
-=======
-      - X: 82437396
->>>>>>> Stashed changes
         Y: 61250000
     - - X: 149687504
         Y: 66875000
@@ -4324,7 +3763,6 @@ CompositeCollider2D:
         Y: 61250000
       - X: 29656250
         Y: 61250000
-<<<<<<< Updated upstream
     - - X: -33599949
         Y: 599912
       - X: -32899919
@@ -4356,101 +3794,6 @@ CompositeCollider2D:
       - X: -29687500
         Y: 5599900
       - X: -29687500
-=======
-    - - X: 86100053
-        Y: 50899913
-      - X: 87100083
-        Y: 51799940
-      - X: 87100100
-        Y: 51799979
-      - X: 87100100
-        Y: 55800014
-      - X: 87100092
-        Y: 55800041
-      - X: 85700075
-        Y: 58050069
-      - X: 85700045
-        Y: 58050091
-      - X: 85347198
-        Y: 58146322
-      - X: 85117779
-        Y: 57509871
-      - X: 85549069
-        Y: 57392251
-      - X: 85549099
-        Y: 57392229
-      - X: 86647156
-        Y: 55627493
-      - X: 86647164
-        Y: 55627466
-      - X: 86647164
-        Y: 52490175
-      - X: 86647147
-        Y: 52490136
-      - X: 85862797
-        Y: 51784229
-      - X: 85862763
-        Y: 51784216
-      - X: 83745081
-        Y: 51784216
-      - X: 83745052
-        Y: 51784225
-      - X: 83235232
-        Y: 52137179
-      - X: 83235219
-        Y: 52137191
-      - X: 82960685
-        Y: 52529367
-      - X: 82960676
-        Y: 52529397
-      - X: 82960676
-        Y: 55392165
-      - X: 82960679
-        Y: 55392182
-      - X: 83274412
-        Y: 56254940
-      - X: 83274418
-        Y: 56254952
-      - X: 84058723
-        Y: 57392201
-      - X: 84490072
-        Y: 59156790
-      - X: 84096669
-        Y: 59264085
-      - X: 83799907
-        Y: 58050041
-      - X: 82799922
-        Y: 56600052
-      - X: 82799916
-        Y: 56600040
-      - X: 82399903
-        Y: 55500026
-      - X: 82399900
-        Y: 55500009
-      - X: 82399900
-        Y: 51849985
-      - X: 82399909
-        Y: 51849955
-      - X: 82749923
-        Y: 51349939
-      - X: 82749936
-        Y: 51349927
-      - X: 83399956
-        Y: 50899909
-      - X: 83399985
-        Y: 50899900
-      - X: 86100019
-        Y: 50899900
-    - - X: -27562600
-        Y: 1250041
-      - X: -27562541
-        Y: 1250100
-      - X: -22437459
-        Y: 1250100
-      - X: -22437400
-        Y: 1250041
-      - X: -22437400
->>>>>>> Stashed changes
         Y: 1250000
       - X: 19687500
         Y: 1250000
@@ -4463,48 +3806,11 @@ CompositeCollider2D:
       - X: -79687504
         Y: 36875000
       - X: -79687504
-        Y: 31250000
-      - X: -57562600
-        Y: 31250000
-      - X: -57562600
-        Y: 31250041
-      - X: -57562541
-        Y: 31250100
-      - X: -52437459
-        Y: 31250100
-      - X: -52437400
-        Y: 31250041
-      - X: -52437400
-        Y: 31250000
-      - X: -47562600
-        Y: 31250000
-      - X: -47562600
-        Y: 31250041
-      - X: -47562541
-        Y: 31250100
-      - X: -42437459
-        Y: 31250100
-      - X: -42437400
-        Y: 31250041
-      - X: -42437400
-        Y: 31250000
-      - X: -37562600
-        Y: 31250000
-      - X: -37562600
-        Y: 31250041
-      - X: -37562541
-        Y: 31250100
-      - X: -32437459
-        Y: 31250100
-      - X: -32437400
-        Y: 31250041
-      - X: -32437400
         Y: 31250000
       - X: -29687500
         Y: 31250000
       - X: -29687500
         Y: 10333433
-<<<<<<< Updated upstream
       - X: -30266684
         Y: 10333433
       - X: -30266718
@@ -4583,16 +3889,6 @@ CompositeCollider2D:
         Y: 7533260
       - X: -30299928
         Y: 8866597
-=======
-      - X: -29666625
-        Y: 10333433
-      - X: -29666566
-        Y: 10333374
-      - X: -29666566
-        Y: 9566648
-      - X: -29666579
-        Y: 9566614
->>>>>>> Stashed changes
       - X: -30299927
         Y: 8866599
       - X: -29687500
@@ -4601,7 +3897,6 @@ CompositeCollider2D:
         Y: 7737223
       - X: -30033341
         Y: 7800102
-<<<<<<< Updated upstream
       - X: -30033390
         Y: 7800086
       - X: -30433420
@@ -4641,31 +3936,6 @@ CompositeCollider2D:
       - X: 30312500
         Y: -24400100
       - X: 30312500
-=======
-      - X: -29666612
-        Y: 7733425
-      - X: -29666566
-        Y: 7733369
-      - X: -29666566
-        Y: 5599959
-      - X: -29666625
-        Y: 5599900
-      - X: -29687500
-        Y: 5599900
-      - X: -29687500
-        Y: 1250000
-      - X: -27562600
-        Y: 1250000
-    - - X: 52437400
-        Y: -28749959
-      - X: 52437459
-        Y: -28749900
-      - X: 57562541
-        Y: -28749900
-      - X: 57562600
-        Y: -28749959
-      - X: 57562600
->>>>>>> Stashed changes
         Y: -28750000
       - X: 89687504
         Y: -28750000
@@ -4678,7 +3948,6 @@ CompositeCollider2D:
       - X: 30312500
         Y: -13125000
       - X: 30312500
-<<<<<<< Updated upstream
         Y: -19666566
       - X: 29733316
         Y: -19666566
@@ -4809,12 +4078,6 @@ CompositeCollider2D:
       - X: 169687504
         Y: -48750000
       - X: 169687504
-=======
-        Y: -28750000
-      - X: 52437400
-        Y: -28750000
-    - - X: 169687504
->>>>>>> Stashed changes
         Y: -43125000
       - X: 159687504
         Y: -43125000
@@ -4828,7 +4091,6 @@ CompositeCollider2D:
         Y: -33125000
       - X: 110312496
         Y: -39666568
-<<<<<<< Updated upstream
       - X: 109733318
         Y: -39666568
       - X: 109733284
@@ -4907,23 +4169,12 @@ CompositeCollider2D:
         Y: -42466741
       - X: 109700072
         Y: -41133402
-=======
-      - X: 110333377
-        Y: -39666568
-      - X: 110333436
-        Y: -39666627
-      - X: 110333436
-        Y: -40433355
-      - X: 110333423
-        Y: -40433389
->>>>>>> Stashed changes
       - X: 109700073
         Y: -41133400
       - X: 110312496
         Y: -40456519
       - X: 110312496
         Y: -42262773
-<<<<<<< Updated upstream
       - X: 109966665
         Y: -42199893
       - X: 109966616
@@ -4934,22 +4185,6 @@ CompositeCollider2D:
         Y: -42633321
       - X: 109599887
         Y: -42933217
-=======
-      - X: 110333390
-        Y: -42266572
-      - X: 110333436
-        Y: -42266628
-      - X: 110333436
-        Y: -44400041
-      - X: 110333377
-        Y: -44400100
-      - X: 110312496
-        Y: -44400100
-      - X: 110312496
-        Y: -48750000
-      - X: 169687504
-        Y: -48750000
->>>>>>> Stashed changes
     - - X: -30312500
         Y: -63125000
       - X: -49687500
@@ -4968,26 +4203,13 @@ CompositeCollider2D:
         Y: -88750000
   m_CompositePaths:
     m_Paths:
-<<<<<<< Updated upstream
     - - {x: -22.00001, y: -7.8749747}
       - {x: -20.03125, y: -7.8749704}
-=======
-    - - {x: -20.031279, y: -7.875}
-      - {x: -20.031279, y: -3.44001}
-      - {x: -20.033342, y: -3.4399748}
-      - {x: -20.033308, y: -3.2266567}
-      - {x: -20.03125, y: -3.2266273}
-      - {x: -20.031258, y: -3.04209}
-      - {x: -20.033342, y: -3.0399911}
-      - {x: -20.033308, y: -2.9666567}
-      - {x: -20.03125, y: -2.9666271}
->>>>>>> Stashed changes
       - {x: -20.031221, y: 3.125}
       - {x: -12.03125, y: 3.1250293}
       - {x: -12.03128, y: 3.6875}
       - {x: -20.03125, y: 3.6875296}
       - {x: -20.031221, y: 11.125}
-<<<<<<< Updated upstream
       - {x: 22.00001, y: 11.125026}
       - {x: 21.999975, y: 12.00001}
       - {x: -21.99999, y: 11.999981}
@@ -4995,42 +4217,6 @@ CompositeCollider2D:
       - {x: 21.999975, y: 8.6875105}
       - {x: 20.99999, y: 8.687475}
       - {x: 20.99996, y: 8.684376}
-=======
-      - {x: -10.664716, y: 11.125029}
-      - {x: -10.664681, y: 11.1274605}
-      - {x: -10.374496, y: 11.127434}
-      - {x: -10.373985, y: 11.125}
-      - {x: 21, y: 11.12503}
-      - {x: 20.999971, y: 12}
-      - {x: -21, y: 11.99997}
-      - {x: -20.999971, y: -7.875}
-    - - {x: -10.390008, y: 10.089991}
-      - {x: -10.28999, y: 10.18001}
-      - {x: -10.289994, y: 10.58001}
-      - {x: -10.430005, y: 10.805012}
-      - {x: -10.465289, y: 10.814608}
-      - {x: -10.488192, y: 10.750978}
-      - {x: -10.445085, y: 10.739215}
-      - {x: -10.335283, y: 10.562738}
-      - {x: -10.335295, y: 10.249006}
-      - {x: -10.4137335, y: 10.178421}
-      - {x: -10.625502, y: 10.178427}
-      - {x: -10.676481, y: 10.213722}
-      - {x: -10.703931, y: 10.252947}
-      - {x: -10.70393, y: 10.539224}
-      - {x: -10.672557, y: 10.625498}
-      - {x: -10.594127, y: 10.739225}
-      - {x: -10.55102, y: 10.915688}
-      - {x: -10.59034, y: 10.926379}
-      - {x: -10.620012, y: 10.805001}
-      - {x: -10.720011, y: 10.660002}
-      - {x: -10.76001, y: 10.549997}
-      - {x: -10.760005, y: 10.18499}
-      - {x: -10.725002, y: 10.13499}
-      - {x: -10.659994, y: 10.089991}
-    - - {x: 20.999971, y: -12}
-      - {x: 20.999971, y: 8.684376}
->>>>>>> Stashed changes
       - {x: 20.03125, y: 8.68747}
       - {x: 20.031221, y: 6.6875}
       - {x: 19.03125, y: 6.687471}
@@ -5073,33 +4259,20 @@ CompositeCollider2D:
       - {x: -21.99996, y: -12.000004}
     - - {x: -17.000029, y: 7}
       - {x: -17.000029, y: 8}
-      - {x: -17.36874, y: 7.9999704}
-      - {x: -17.36875, y: 7.937487}
-      - {x: -17.431257, y: 7.8749905}
-      - {x: -17.600014, y: 7.875005}
-      - {x: -17.63126, y: 7.925006}
-      - {x: -17.63129, y: 8}
       - {x: -18, y: 7.9999704}
       - {x: -17.999971, y: 7}
-    - - {x: -17.478165, y: 7.915635}
-      - {x: -17.478127, y: 7.937513}
-      - {x: -17.468742, y: 7.946885}
-      - {x: -17.446884, y: 7.9469147}
-      - {x: -17.446915, y: 8}
-      - {x: -17.553116, y: 7.9999704}
-      - {x: -17.553085, y: 7.946885}
-      - {x: -17.531237, y: 7.946876}
-      - {x: -17.521866, y: 7.9374914}
-      - {x: -17.521835, y: 7.915635}
     - - {x: 2.965596, y: 6.125}
       - {x: 2.9687204, y: 6.6875}
       - {x: 2.03125, y: 6.687471}
       - {x: 2.0312793, y: 6.125}
+    - - {x: 8.965596, y: 6.125}
+      - {x: 8.96872, y: 6.6875}
+      - {x: 8.03125, y: 6.687471}
+      - {x: 8.03128, y: 6.125}
     - - {x: 14.965597, y: 6.125}
       - {x: 14.968721, y: 6.6875}
       - {x: 14.03125, y: 6.687471}
       - {x: 14.031279, y: 6.125}
-<<<<<<< Updated upstream
     - - {x: -3.3600075, y: 0.05999}
       - {x: -3.28999, y: 0.1200096}
       - {x: -3.2866614, y: 0.3700107}
@@ -5113,48 +4286,12 @@ CompositeCollider2D:
       - {x: -2.96875, y: 0.5599606}
       - {x: -2.968721, y: 0.125}
       - {x: 1.96875, y: 0.1250293}
-=======
-    - - {x: 8.965596, y: 6.125}
-      - {x: 8.96872, y: 6.6875}
-      - {x: 8.03125, y: 6.687471}
-      - {x: 8.03128, y: 6.125}
-      - {x: 8.335285, y: 6.125039}
-      - {x: 8.3353195, y: 6.127461}
-      - {x: 8.6255045, y: 6.127434}
-      - {x: 8.626012, y: 6.12501}
-    - - {x: 8.609992, y: 5.08999}
-      - {x: 8.71001, y: 5.18001}
-      - {x: 8.710006, y: 5.5800104}
-      - {x: 8.569995, y: 5.8050117}
-      - {x: 8.534711, y: 5.814607}
-      - {x: 8.511809, y: 5.7509785}
-      - {x: 8.554915, y: 5.7392144}
-      - {x: 8.664717, y: 5.5627394}
-      - {x: 8.664705, y: 5.249006}
-      - {x: 8.5862665, y: 5.1784215}
-      - {x: 8.374498, y: 5.178427}
-      - {x: 8.32352, y: 5.2137227}
-      - {x: 8.296067, y: 5.2529483}
-      - {x: 8.29607, y: 5.5392222}
-      - {x: 8.327443, y: 5.6254973}
-      - {x: 8.405873, y: 5.739225}
-      - {x: 8.44898, y: 5.9156866}
-      - {x: 8.409659, y: 5.926379}
-      - {x: 8.379988, y: 5.8050003}
-      - {x: 8.27999, y: 5.6600013}
-      - {x: 8.23999, y: 5.5499964}
-      - {x: 8.239995, y: 5.184989}
-      - {x: 8.274998, y: 5.13499}
-      - {x: 8.340007, y: 5.08999}
-    - - {x: 1.9687208, y: 0.125}
->>>>>>> Stashed changes
       - {x: 1.9687208, y: 0.6875}
       - {x: -2.03125, y: 0.6875294}
       - {x: -2.0312793, y: 3.6875}
       - {x: -7.9687505, y: 3.687471}
       - {x: -7.968721, y: 3.125}
       - {x: -2.96875, y: 3.1249707}
-<<<<<<< Updated upstream
       - {x: -2.9687793, y: 1.0333433}
       - {x: -3.026679, y: 1.0333356}
       - {x: -3.0800078, y: 0.98667294}
@@ -5196,18 +4333,6 @@ CompositeCollider2D:
       - {x: 3.03125, y: -2.4400394}
       - {x: 3.0312793, y: -2.875}
       - {x: 8.968751, y: -2.874971}
-=======
-      - {x: -2.968721, y: 1.0333433}
-      - {x: -2.9666567, y: 1.0333083}
-      - {x: -2.9666646, y: 0.956654}
-      - {x: -2.96875, y: 0.9543391}
-      - {x: -2.9687269, y: 0.773718}
-      - {x: -2.9666567, y: 0.7733133}
-      - {x: -2.966692, y: 0.55999}
-      - {x: -2.96875, y: 0.5599607}
-      - {x: -2.968721, y: 0.125}
-    - - {x: 8.96872, y: -2.875}
->>>>>>> Stashed changes
       - {x: 8.96872, y: -1.3125}
       - {x: 4, y: -1.3125293}
       - {x: 3.9999704, y: -1.3156248}
@@ -5259,7 +4384,6 @@ CompositeCollider2D:
       - {x: 12, y: -3.3125293}
       - {x: 11.99997, y: -3.315625}
       - {x: 11.03125, y: -3.3125293}
-<<<<<<< Updated upstream
       - {x: 11.03122, y: -3.966657}
       - {x: 10.973322, y: -3.9666646}
       - {x: 10.919992, y: -4.013327}
@@ -5288,17 +4412,6 @@ CompositeCollider2D:
       - {x: 11.031214, y: -4.2262707}
       - {x: 10.996653, y: -4.2200017}
       - {x: 10.956658, y: -4.2633443}
-=======
-      - {x: 11.031279, y: -3.966657}
-      - {x: 11.033344, y: -3.966692}
-      - {x: 11.033336, y: -4.0433464}
-      - {x: 11.03125, y: -4.045662}
-      - {x: 11.031273, y: -4.2262816}
-      - {x: 11.033344, y: -4.2266865}
-      - {x: 11.033308, y: -4.44001}
-      - {x: 11.03125, y: -4.440039}
-      - {x: 11.03128, y: -4.875}
->>>>>>> Stashed changes
     - - {x: -3.0312793, y: -6.875}
       - {x: -3.0312793, y: -6.3125}
       - {x: -4.96875, y: -6.312529}
