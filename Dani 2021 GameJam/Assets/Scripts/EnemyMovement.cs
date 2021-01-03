@@ -13,8 +13,6 @@ public class EnemyMovement : MonoBehaviour
     public bool StartRight;
     string Direction = "right";
     float StartingPointX;
-    bool FreeRoamEnabled = false;
-    Vector3 PreviousFrameLocation;
 
     public void Start() 
     {
@@ -41,49 +39,24 @@ public class EnemyMovement : MonoBehaviour
         }
         else
         {
-            if (FreeRoamEnabled)
-            {
-                FreeRoam();
-            }
-            else
-            {
-                Roam();
-            }
-            
+            Roam();
         }
     }
 
     void Roam()
-    {
-        if (transform.localPosition == PreviousFrameLocation)
-        {
-            FreeRoamEnabled = true;
-        }
-
+    {   
         if ((Direction == "right") && (transform.localPosition.x > ( StartingPointX + RoamRadius)))
         {
             ChangeDirectionTo("left");
         }
-        else if ((Direction == "left") && (transform.localPosition.x < ( StartingPointX - RoamRadius)))
-        {   
-            ChangeDirectionTo("right");
-        }
-
-        PreviousFrameLocation = transform.localPosition;
-        rb.velocity = new Vector2(EnemySpeed, 0);
-    }
-
-    void FreeRoam()
-    {
-        if ((Direction == "right") && (transform.localPosition == PreviousFrameLocation))
+        else if (Direction == "left")
         {
-            ChangeDirectionTo("left");
+            rb.velocity = new Vector2(-EnemySpeed, 0);
+            if ((transform.localPosition.x) < ( StartingPointX - RoamRadius))
+            {
+                ChangeDirectionTo("right");
+            }
         }
-        else if ((Direction == "left") && (transform.localPosition == PreviousFrameLocation))
-        {
-            ChangeDirectionTo("right");
-        }
-        PreviousFrameLocation = transform.localPosition;
         rb.velocity = new Vector2(EnemySpeed, 0);
     }
 
