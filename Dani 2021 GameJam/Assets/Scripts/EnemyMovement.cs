@@ -3,6 +3,8 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     public Rigidbody2D rb;
+    public BoxCollider2D boxCollider2D;
+    public LayerMask GroundLayer;
     public float EnemySpeed;
     public float RoamRadius;
     public float VisionRadius;
