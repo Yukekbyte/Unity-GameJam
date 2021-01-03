@@ -27,7 +27,7 @@ public class EnemyHealth : MonoBehaviour
 
     public void Die()
     {
-        gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
         gameObject.GetComponent<EnemyMovement>().enabled = false;
         gameObject.GetComponent<EnemyAttack>().enabled = false;
         gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
