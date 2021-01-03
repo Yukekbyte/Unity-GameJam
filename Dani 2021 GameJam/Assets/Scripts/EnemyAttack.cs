@@ -10,11 +10,7 @@ public class EnemyAttack : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log(".................................");
-        Debug.Log(col.GetType());
-        Debug.Log(typeof(BoxCollider2D));
-        Debug.Log(".....................");
-        if ((col.gameObject.CompareTag("Player")) && (col.GetType() == typeof(BoxCollider2D)))
+        if (col.gameObject.CompareTag("Player"))
         {
             inAttackRange = true;
             Debug.Log("attacking player");
@@ -22,7 +18,7 @@ public class EnemyAttack : MonoBehaviour
     }
     void OnTriggerExit2D(Collider2D col)
     {  
-        if ((col.gameObject.CompareTag("Player")) && (col.GetType() == typeof(BoxCollider2D)))
+        if (col.gameObject.CompareTag("Player"))
         {
         inAttackRange = false;
         }

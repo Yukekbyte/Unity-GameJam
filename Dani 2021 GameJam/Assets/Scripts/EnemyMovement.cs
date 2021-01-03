@@ -3,9 +3,6 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     public Rigidbody2D rb;
-    public GameObject Player;
-    public BoxCollider2D boxCollider2D;
-    public LayerMask GroundLayer;
     public float EnemySpeed;
     public float RoamRadius;
     public float VisionRadius;
@@ -86,14 +83,5 @@ public class EnemyMovement : MonoBehaviour
         float margin = 0.1f;
         RaycastHit2D ray = Physics2D.BoxCast(boxCollider2D.bounds.center, boxCollider2D.bounds.size, 0f, Vector2.down, margin, GroundLayer);
         return ray.collider == null;
-    }
-
-    void OnTriggerEnter2D(Collider2D col)
-        {
-        if ((col.gameObject.CompareTag("Player")) && (col.GetType() == typeof(CapsuleCollider2D)))
-        {
-            EnemySpotted = true;
-            Debug.Log("spotted an enemy");
-        }
     }
 }
