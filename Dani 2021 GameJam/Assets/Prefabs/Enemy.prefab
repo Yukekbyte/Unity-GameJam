@@ -177,7 +177,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 866337929031879400}
-  Player: {fileID: 5274821967573254281, guid: b45836895fb4f97458e3a24ff023f9b6, type: 3}
   boxCollider2D: {fileID: 866337929031879407}
   GroundLayer:
     serializedVersion: 2
