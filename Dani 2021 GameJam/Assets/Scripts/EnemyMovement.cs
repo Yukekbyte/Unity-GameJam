@@ -23,6 +23,7 @@ public class EnemyMovement : MonoBehaviour
         else
         {
             Direction = "left";
+            transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
         }
         //sets Starting position
         StartingPointX = transform.localPosition.x;
