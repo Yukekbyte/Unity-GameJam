@@ -101,7 +101,9 @@ TextureImporter:
     outline: []
     physicsShape:
     - - {x: -160, y: -120}
-      - {x: -160, y: 160}
+      - {x: -160, y: 60}
+      - {x: -150, y: 60}
+      - {x: -150, y: 160}
       - {x: 160, y: 160}
       - {x: 160, y: -120}
     bones: []

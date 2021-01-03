@@ -5,25 +5,22 @@ public class EnemyMovement : MonoBehaviour
     public Rigidbody2D rb;
     public BoxCollider2D boxCollider2D;
     public LayerMask GroundLayer;
+    public GameObject Player;
     public float EnemySpeed;
     public float RoamRadius;
     public float VisionRadius;
+    public float ChaseBuffer;
     public bool StartRight;
-    string Direction;
+    string Direction = "right";
     float StartingPointX;
-    bool EnemySpotted;
 
     public void Start() 
     {
+        Player = GameObject.Find("Player");
         //sets direction to correct starting value
-        if (StartRight)
+        if (!StartRight)
         {
-            Direction = "right";
-        }
-        else
-        {
-            Direction = "left";
-            transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+            ChangeDirectionTo("left");
         }
         //sets Starting position
         StartingPointX = transform.localPosition.x;
@@ -36,7 +33,7 @@ public class EnemyMovement : MonoBehaviour
             return;
         }
 
-        if (EnemySpotted)
+        if (PlayerSpotted())
         {
             Chase();
         }
@@ -48,35 +45,40 @@ public class EnemyMovement : MonoBehaviour
 
     void Roam()
     {   
-        if (Direction == "right")
+        if ((Direction == "right") && (transform.localPosition.x > ( StartingPointX + RoamRadius)))
         {
-            if ((transform.localPosition.x) < ( StartingPointX + RoamRadius))
-            {
-                rb.velocity = new Vector2(EnemySpeed, 0);
-            }
-            else
-            {
-                Direction = "left";
-                transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
-            }
+            ChangeDirectionTo("left");
         }
         else if (Direction == "left")
         {
-            if ((transform.localPosition.x) > ( StartingPointX - RoamRadius))
+            rb.velocity = new Vector2(-EnemySpeed, 0);
+            if ((transform.localPosition.x) < ( StartingPointX - RoamRadius))
             {
-                rb.velocity = new Vector2(-EnemySpeed, 0);
-            }
-            else
-            {
-                Direction = "right";
-                transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+                ChangeDirectionTo("right");
             }
         }
+        rb.velocity = new Vector2(EnemySpeed, 0);
     }
 
     void Chase()
     {
-        Debug.Log("I'm chasing the player");
+        if ((transform.localPosition.x < Player.transform.position.x) && (Direction != "right"))
+        {
+            ChangeDirectionTo("right");
+        }
+        else if ((transform.localPosition.x > Player.transform.position.x) && (Direction != "left"))
+        {
+            ChangeDirectionTo("left");
+        }
+
+        if ( ( (Player.transform.position.x + ChaseBuffer) < transform.localPosition.x) && (transform.localPosition.x < (Player.transform.position.x + ChaseBuffer) ) )
+        {
+            return;
+        }
+        else
+        {
+            rb.velocity = new Vector2(EnemySpeed, 0);
+        }
     }
 
     bool Falling() //Checks if enemy is falling
@@ -86,5 +88,25 @@ public class EnemyMovement : MonoBehaviour
         float margin = 0.1f;
         RaycastHit2D ray = Physics2D.BoxCast(boxCollider2D.bounds.center, boxCollider2D.bounds.size, 0f, Vector2.down, margin, GroundLayer);
         return ray.collider == null;
+    }
+
+    void ChangeDirectionTo(string DirectionToChange)
+    {
+        Direction = DirectionToChange;
+        EnemySpeed = EnemySpeed * -1;
+        transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+    }
+
+    bool PlayerSpotted()
+    {
+        float Distance = Vector3.Distance (transform.localPosition, Player.transform.position);
+        if (Distance < VisionRadius)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }

@@ -5,22 +5,38 @@ public class GameManager : MonoBehaviour
 {   
     public GameObject Main;
     public GameObject Settings;
+    bool SceneIsLevel;
     int MenuLayer;
-    string MainMenuSceneName = "Menus";
-
+    
     public void Start()
-    {
-        if (SceneManager.GetActiveScene().name == MainMenuSceneName)
+    {   switch (SceneManager.GetActiveScene().name)
         {
-            MenuLayer = 1;
-            Main.SetActive(true);
-            Settings.SetActive(false);
-        }
-        else
-        {
-            MenuLayer = 0;
-            Main.SetActive(false);
-            Settings.SetActive(false);
+            case "MainMenu":
+            {
+                SceneIsLevel = false;
+                MenuLayer = 1;
+                Main = GameObject.Find("Main");
+                Settings = GameObject.Find("Settings");
+                Main.SetActive(true);
+                Settings.SetActive(false);
+                break;
+            }
+            case "EndScreen":
+            {
+                SceneIsLevel = false;
+                MenuLayer = 1;
+                Main = GameObject.Find("Main");
+                Main.SetActive(true);
+                break;
+            }
+            default:
+            {
+                SceneIsLevel = true;
+                MenuLayer = 0;
+                Main.SetActive(false);
+                Settings.SetActive(false);
+                break;
+            }
         }
     } 
 
@@ -46,7 +62,6 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("Level1");
         Time.timeScale = 1;
-
     }
 
     public void RestartLevel() // Restarts current level
@@ -84,7 +99,7 @@ public class GameManager : MonoBehaviour
             Settings.SetActive(false);
             MenuLayer = 1;
         }
-        if (MenuLayer == 1 && (SceneManager.GetActiveScene().name != MainMenuSceneName))
+        if (MenuLayer == 1 && (SceneIsLevel))
         {
             ResumeGame();
             Main.SetActive(false);
@@ -94,7 +109,7 @@ public class GameManager : MonoBehaviour
 
     public void GoToMainMenu()
     {
-        SceneManager.LoadScene(MainMenuSceneName);
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void QuitGame() // Exits Game

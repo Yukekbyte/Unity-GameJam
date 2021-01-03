@@ -100,10 +100,10 @@ TextureImporter:
     sprites: []
     outline: []
     physicsShape:
-    - - {x: -159, y: -119}
+    - - {x: -160, y: -120}
       - {x: -160, y: 60}
       - {x: 150, y: 60}
-      - {x: 149, y: -120}
+      - {x: 150, y: -120}
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
