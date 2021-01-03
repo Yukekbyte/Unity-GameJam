@@ -3,6 +3,9 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float playerSpeed;
+    public float dashSpeed;
+    public float dashDuration;
+    public float dashRate;
     public float jumpForce;
     public float slideSpeed;
     public float wallJumpForce;
@@ -15,6 +18,9 @@ public class PlayerMovement : MonoBehaviour
     private bool onWall;
     private bool onWallLeft;
     private bool onWallRight;
+    private float nextDashTime;
+    private float dashTime;
+    private bool doingSomethingElse;
 
     void Awake()
     {
@@ -42,6 +48,24 @@ public class PlayerMovement : MonoBehaviour
             else if (onWallLeft)
             {
                 rb.velocity = new Vector2(-wallJumpForce, jumpForce);
+            }
+        }
+
+        //dash
+        if (Input.GetKeyDown(KeyCode.LeftShift) && Time.time >= nextDashTime)
+        {   
+            doingSomethingElse = true;
+            nextDashTime = Time.time + 1f/dashRate;
+            dashTime = dashDuration;
+        }
+        if (dashTime >= 0)
+        {
+            print("dashing");
+            Dash();
+            dashTime -= Time.deltaTime;
+            if (dashTime < 0)
+            {
+                doingSomethingElse = false;
             }
         }
 
@@ -73,7 +97,10 @@ public class PlayerMovement : MonoBehaviour
         Vector2 dir = new Vector2(x, y);
 
         //Walk
-        Walk(dir);
+        if (!doingSomethingElse)
+        {
+            Walk(dir);
+        }
 
         //Player faces his direction
         if(dir.x > 0)
@@ -95,7 +122,7 @@ public class PlayerMovement : MonoBehaviour
     //Dash method
     void Dash()
     {
-        //In Progress
+        rb.velocity = new Vector2(rb.velocity.x * dashSpeed, rb.velocity.y);
     }
 
     //Wallslide
