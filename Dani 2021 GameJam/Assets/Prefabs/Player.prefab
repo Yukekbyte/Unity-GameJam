@@ -410,6 +410,10 @@ MonoBehaviour:
   souls: 0
   playerAttack: {fileID: 0}
   playerMovement: {fileID: 0}
+  abilityInfo: {fileID: 0}
+  abilityInfoTitle: {fileID: 0}
+  abilityInfoExplanation: {fileID: 0}
+  displayAbilityInfoDuration: 5
 --- !u!96 &-3478630122814508040
 TrailRenderer:
   serializedVersion: 2
