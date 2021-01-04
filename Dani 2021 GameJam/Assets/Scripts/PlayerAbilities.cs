@@ -37,10 +37,10 @@ public class PlayerAbilities : MonoBehaviour
         switch(souls)
         {
             case 1:
-                playerMovement.wallJumpEnabled = true;
+                //playerMovement.wallJumpEnabled = true;
                 break;
             case 3:
-                playerMovement.dashEnabled = true;
+                //playerMovement.dashEnabled = true;
                 break;
             case 5:
                 playerAttack.AttackDamageUp();
