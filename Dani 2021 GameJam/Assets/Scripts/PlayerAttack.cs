@@ -5,7 +5,7 @@ public class PlayerAttack : MonoBehaviour
     public Animation anim;
     public Transform attackPoint;
     public float attackRange;
-    public float damage;
+    public float attackDamage;
     public float attackRate;
     public LayerMask enemyLayers;
 
@@ -34,7 +34,7 @@ public class PlayerAttack : MonoBehaviour
         foreach(Collider2D enemy in hitEnemies)
         {
             if (enemy.CompareTag("Enemy"))
-                enemy.GetComponent<EnemyHealth>().TakeDamage(damage);
+                enemy.GetComponent<EnemyHealth>().TakeDamage(attackDamage);
         }
     }
 
@@ -42,5 +42,19 @@ public class PlayerAttack : MonoBehaviour
     void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+    }
+
+    public void AttackSpeedUp()
+    {
+        attackRate *= 2;
+    }
+
+    public void AttackDamageUp()
+    {
+        attackDamage++;
+    }
+    public void AttackRangeUp()
+    {
+        // attackRange vergroten
     }
 }
