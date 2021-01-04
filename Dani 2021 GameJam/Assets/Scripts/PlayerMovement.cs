@@ -23,11 +23,11 @@ public class PlayerMovement : MonoBehaviour
     private bool onWallRight;
     private bool wallJumping;
     private float wallJumpTimer;
+    private Vector2 wallJumpDirection;
     private float nextDashAvailable;
     private float dashTimer;
     private bool dashing;
-    private float dashDirectionX;
-    private float dashDirectionY;
+    private Vector2 dashDirection;
 
     void Awake()
     {
@@ -63,8 +63,9 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.LeftShift) && (Time.time >= nextDashAvailable) && dashEnabled && playerMoveInput)
         {   
-            dashDirectionX = Input.GetAxis("Horizontal");
-            dashDirectionY = Input.GetAxis("Vertical");
+            float dashDirectionX = Input.GetAxis("Horizontal");
+            float dashDirectionY = Input.GetAxis("Vertical");
+            dashDirection = new Vector2(dashDirectionX, dashDirectionY);
 
             dashing = true;
             nextDashAvailable = Time.time + 1f/dashRate;
@@ -72,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if (dashing)
         {
-            Dash();
+            Dash(dashDirection);
             dashTimer -= Time.deltaTime;
             if (dashTimer < 0)
             {
@@ -92,9 +93,18 @@ public class PlayerMovement : MonoBehaviour
         {
             wallJumping = true;
             wallJumpTimer = wallJumpDuration;
+            if (onWallRight)
+            {
+                wallJumpDirection = new Vector2(wallJumpForce, jumpForce); 
+            }
+            else if (onWallLeft)
+            {
+                wallJumpDirection = new Vector2(wallJumpForce, jumpForce);
+            }
         }
         if (wallJumping)
         {
+            WallJump(wallJumpDirection);
             wallJumpTimer -= Time.time;
         }
 
@@ -145,15 +155,20 @@ public class PlayerMovement : MonoBehaviour
     }
     
     //Dash method
-    void Dash()
+    void Dash(Vector2 dir)
     {
-        rb.velocity = new Vector2(dashDirectionX * dashSpeed, dashDirectionY * dashSpeed);
+        rb.velocity = new Vector2(dir.x * dashSpeed, dir.y * dashSpeed);
     }
 
     //Wallslide
     void WallSlide()
     {
         rb.velocity = new Vector2(rb.velocity.x, -slideSpeed * Time.deltaTime);
+    }
+
+    void WallJump(Vector2 dir)
+    {
+        rb.AddForce(dir);
     }
 
     //Jump method met een jumpforce nodig
