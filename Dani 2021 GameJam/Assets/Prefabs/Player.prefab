@@ -326,14 +326,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpeed: 500
-  dashSpeed: 1000
-  dashDuration: 0.1
-  dashRate: 0.1
+  dashSpeed: 20000
+  dashDuration: 0.15
+  dashRate: 1
   dashEnabled: 1
   jumpForce: 18.9
   slideSpeed: 350
-  wallJumpForce: 2000
-  wallJumpEnabled: 0
+  wallJumpForce: 1000
+  wallJumpDuration: 1
+  wallJumpEnabled: 1
   rb: {fileID: 0}
   boxCollider2D: {fileID: 0}
   groundLayer:
