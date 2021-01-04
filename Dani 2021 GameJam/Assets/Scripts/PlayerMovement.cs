@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     private bool onWallRight;
     private bool wallJumping;
     private float wallJumpTimer;
-    private Vector2 wallJumpDirection;
+    private float wallJumpDirection;
     private float nextDashAvailable;
     private float dashTimer;
     private bool dashing;
@@ -59,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //dash
-        bool playerMoveInput = (Input.GetAxis("Horizontal") > 0 || Input.GetAxis("Vertical") > 0);
+        bool playerMoveInput = (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0);
 
         if (Input.GetKeyDown(KeyCode.LeftShift) && (Time.time >= nextDashAvailable) && dashEnabled && playerMoveInput)
         {   
@@ -72,12 +72,13 @@ public class PlayerMovement : MonoBehaviour
             dashTimer = dashDuration;
         }
         if (dashing)
-        {
-            Dash(dashDirection);
+        {   
+            Dash();
             dashTimer -= Time.deltaTime;
             if (dashTimer < 0)
             {
                 dashing = false;
+                rb.velocity = new Vector2(0, 0);
             }
         }
 
@@ -95,17 +96,22 @@ public class PlayerMovement : MonoBehaviour
             wallJumpTimer = wallJumpDuration;
             if (onWallRight)
             {
-                wallJumpDirection = new Vector2(wallJumpForce, jumpForce); 
+                wallJumpDirection = 1;
             }
             else if (onWallLeft)
             {
-                wallJumpDirection = new Vector2(wallJumpForce, jumpForce);
+                wallJumpDirection = -1;
             }
+            WallJump();
         }
         if (wallJumping)
         {
-            WallJump(wallJumpDirection);
             wallJumpTimer -= Time.time;
+            if (wallJumpTimer < 0)
+            {
+                wallJumping = false;
+                rb.velocity = new Vector2(0, 0);
+            }
         }
 
 
@@ -132,7 +138,10 @@ public class PlayerMovement : MonoBehaviour
         Vector2 dir = new Vector2(x, y);
 
         //Walk
-        if (!dashing || !wallJumping)
+        print("dashing " + dashing);
+        print("walljumping " + wallJumping);
+        print("walking " + (!dashing && !wallJumping));
+        if (!dashing && !wallJumping)
         {
             Walk(dir);
         }
@@ -155,9 +164,9 @@ public class PlayerMovement : MonoBehaviour
     }
     
     //Dash method
-    void Dash(Vector2 dir)
+    void Dash()
     {
-        rb.velocity = new Vector2(dir.x * dashSpeed, dir.y * dashSpeed);
+        rb.velocity = new Vector2(dashDirection.x * dashSpeed * Time.deltaTime, dashDirection.y * dashSpeed * Time.deltaTime);
     }
 
     //Wallslide
@@ -166,9 +175,9 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector2(rb.velocity.x, -slideSpeed * Time.deltaTime);
     }
 
-    void WallJump(Vector2 dir)
+    void WallJump()
     {
-        rb.AddForce(dir);
+        rb.velocity += new Vector2(wallJumpDirection * wallJumpForce, jumpForce);
     }
 
     //Jump method met een jumpforce nodig
