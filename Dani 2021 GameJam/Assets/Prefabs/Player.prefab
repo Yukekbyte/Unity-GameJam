@@ -326,21 +326,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpeed: 500
-  dashSpeed: 5
-  dashDuration: 0.2
-  dashRate: 0.5
+  dashSpeed: 1000
+  dashDuration: 0.1
+  dashRate: 0.1
+  dashEnabled: 1
   jumpForce: 18.9
   slideSpeed: 350
-  wallJumpForce: 4
-  wallJumpDuration: 0.05
+  wallJumpForce: 2000
+  wallJumpEnabled: 0
   rb: {fileID: 0}
   boxCollider2D: {fileID: 0}
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 512
   spriteRenderer: {fileID: 0}
 --- !u!114 &5274821967573254282
 MonoBehaviour:
