@@ -1,15 +1,26 @@
 ﻿using UnityEngine;
+using TMPro;
 
 public class PlayerAbilities : MonoBehaviour
 {
     public int souls = 0;
     public PlayerAttack playerAttack;
     public PlayerMovement playerMovement;
+    public GameObject abilityInfo;
+    public TextMeshPro abilityInfoTitle;
+    public TextMeshPro abilityInfoExplanation;
+    float displayAbilityDuration = 2f;
+    float displayAbilityTimer;
 
     void Awake()
     {
+        abilityInfo = GameObject.Find("AbilityInfo");
+        abilityInfo.SetActive(false);
         playerAttack = GameObject.FindObjectOfType<PlayerAttack>();
         playerMovement = GameObject.FindObjectOfType<PlayerMovement>();
+        playerMovement.wallJumpEnabled = false;
+        playerMovement.dashEnabled = false;
+        DisplayAbilityInfo( "hahahaha", "loooooooooooooooool");
     }
     public void AddSoul()
     {
@@ -37,20 +48,68 @@ public class PlayerAbilities : MonoBehaviour
         switch(souls)
         {
             case 1:
-                //playerMovement.wallJumpEnabled = true;
+            {
+                playerMovement.wallJumpEnabled = true;
+                string title = "";
+                string explanation = "";
+                DisplayAbilityInfo(title, explanation);
                 break;
+            }
             case 3:
-                //playerMovement.dashEnabled = true;
+            {
+                playerMovement.dashEnabled = true;
+                string title = "";
+                string explanation = "";
+                DisplayAbilityInfo(title, explanation);
                 break;
+            }
             case 5:
-                playerAttack.AttackDamageUp();
+            {
+                AttackDamageUp();
+                string title = "";
+                string explanation = "";
+                DisplayAbilityInfo(title, explanation);
                 break;
+            }
             case 7:
-                playerAttack.AttackSpeedUp();
+            {
+                AttackSpeedUp();
+                string title = "";
+                string explanation = "";
+                DisplayAbilityInfo(title, explanation);
                 break;
+            }
             case 10:
-                playerAttack.AttackRangeUp();
+            {
+                AttackRangeUp();
+                string title = "";
+                string explanation = "";
+                DisplayAbilityInfo(title, explanation);
                 break;
+            }
         }
+
+    }
+
+    void DisplayAbilityInfo(string title, string explanation)
+    {
+        displayAbilityTimer = displayAbilityDuration;
+        abilityInfo.SetActive(true);
+        abilityInfoTitle.text = title;
+        abilityInfoExplanation.text = explanation;
+    }
+
+    void AttackSpeedUp()
+    {
+        playerAttack.attackRate *= 2;
+    }
+
+    void AttackDamageUp()
+    {
+        playerAttack.attackDamage++;
+    }
+    public void AttackRangeUp()
+    {
+        // attackRange vergroten
     }
 }
