@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public Animator animator;
     public float playerSpeed;
     public float dashSpeed;
     public float dashDuration;
@@ -41,7 +42,9 @@ public class PlayerMovement : MonoBehaviour
     {
         //Jump
         if (Input.GetKeyDown(KeyCode.Space))
-        {
+        {   
+            animator.SetBool("IsJumping", true);
+
             //als de speler alleen op de grond staat jumpt hij normaal
             if (IsGrounded())
             {
@@ -56,6 +59,11 @@ public class PlayerMovement : MonoBehaviour
             {
                 rb.velocity = new Vector2(-wallJumpForce, jumpForce);
             }
+        }
+    
+        if (IsGrounded())
+        {
+            animator.SetBool("IsJumping", false);
         }
 
         //dash
@@ -136,6 +144,7 @@ public class PlayerMovement : MonoBehaviour
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
         Vector2 dir = new Vector2(x, y);
+        animator.SetFloat("Speed", Mathf.Abs(x));
 
         //Walk
         print("dashing " + dashing);
@@ -156,7 +165,7 @@ public class PlayerMovement : MonoBehaviour
             transform.localScale = new Vector3(-xScale, transform.localScale.y, transform.localScale.z);
         }
     }
-    
+
     //Walk method met een direction (dir) nodig
     void Walk(Vector2 dir)
     {
@@ -195,4 +204,6 @@ public class PlayerMovement : MonoBehaviour
         RaycastHit2D ray = Physics2D.BoxCast(boxCollider2D.bounds.center, boxCollider2D.bounds.size, 0f, Vector2.down, margin, groundLayer);
         return ray.collider != null;
     }
+    
+
 }
