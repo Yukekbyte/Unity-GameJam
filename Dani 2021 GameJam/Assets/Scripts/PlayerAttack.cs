@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -42,19 +42,5 @@ public class PlayerAttack : MonoBehaviour
     void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
-    }
-
-    public void AttackSpeedUp()
-    {
-        attackRate *= 2;
-    }
-
-    public void AttackDamageUp()
-    {
-        attackDamage++;
-    }
-    public void AttackRangeUp()
-    {
-        // attackRange vergroten
     }
 }

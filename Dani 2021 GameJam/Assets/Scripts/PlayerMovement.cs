@@ -147,9 +147,6 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Speed", Mathf.Abs(x));
 
         //Walk
-        print("dashing " + dashing);
-        print("walljumping " + wallJumping);
-        print("walking " + (!dashing && !wallJumping));
         if (!dashing && !wallJumping)
         {
             Walk(dir);
