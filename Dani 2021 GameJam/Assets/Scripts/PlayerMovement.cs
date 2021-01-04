@@ -6,9 +6,11 @@ public class PlayerMovement : MonoBehaviour
     public float dashSpeed;
     public float dashDuration;
     public float dashRate;
+    public bool dashEnabled;
     public float jumpForce;
     public float slideSpeed;
     public float wallJumpForce;
+    public bool wallJumpEnabled;
     public Rigidbody2D rb;
     public BoxCollider2D boxCollider2D;
     public LayerMask groundLayer;
@@ -18,9 +20,11 @@ public class PlayerMovement : MonoBehaviour
     private bool onWall;
     private bool onWallLeft;
     private bool onWallRight;
-    private float nextDashTime;
-    private float dashTime;
-    private bool doingSomethingElse;
+    private float nextDashAvailable;
+    private float dashTimer;
+    private bool dashing;
+    private float dashDirectionX;
+    private float dashDirectionY;
 
     void Awake()
     {
@@ -52,20 +56,22 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //dash
-        if (Input.GetKeyDown(KeyCode.LeftShift) && Time.time >= nextDashTime)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && (Time.time >= nextDashAvailable) && dashEnabled)
         {   
-            doingSomethingElse = true;
-            nextDashTime = Time.time + 1f/dashRate;
-            dashTime = dashDuration;
+            dashDirectionX = Input.GetAxis("Horizontal");
+            dashDirectionY = Input.GetAxis("Vertical");
+
+            dashing = true;
+            nextDashAvailable = Time.time + 1f/dashRate;
+            dashTimer = dashDuration;
         }
-        if (dashTime >= 0)
+        if (dashTimer >= 0)
         {
-            print("dashing");
             Dash();
-            dashTime -= Time.deltaTime;
-            if (dashTime < 0)
+            dashTimer -= Time.deltaTime;
+            if (dashTimer < 0)
             {
-                doingSomethingElse = false;
+                dashing = false;
             }
         }
 
@@ -97,7 +103,7 @@ public class PlayerMovement : MonoBehaviour
         Vector2 dir = new Vector2(x, y);
 
         //Walk
-        if (!doingSomethingElse)
+        if (!dashing)
         {
             Walk(dir);
         }
@@ -122,7 +128,7 @@ public class PlayerMovement : MonoBehaviour
     //Dash method
     void Dash()
     {
-        rb.velocity = new Vector2(rb.velocity.x * dashSpeed, rb.velocity.y);
+        rb.velocity = new Vector2(dashDirectionX * dashSpeed, dashDirectionY * dashSpeed);
     }
 
     //Wallslide
