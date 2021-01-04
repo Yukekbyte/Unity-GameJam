@@ -56,7 +56,9 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //dash
-        if (Input.GetKeyDown(KeyCode.LeftShift) && (Time.time >= nextDashAvailable) && dashEnabled)
+        bool playerMoveInput = (Input.GetAxis("Horizontal") > 0 || Input.GetAxis("Vertical") > 0);
+
+        if (Input.GetKeyDown(KeyCode.LeftShift) && (Time.time >= nextDashAvailable) && dashEnabled && playerMoveInput)
         {   
             dashDirectionX = Input.GetAxis("Horizontal");
             dashDirectionY = Input.GetAxis("Vertical");
@@ -76,8 +78,10 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //Check if onWall with circles
-        onWallRight = Physics2D.OverlapCircle((Vector2)transform.position + boxCollider2D.size.x/2 * Vector2.right - 0.4f * boxCollider2D.size.y * Vector2.up, collisionRadius, groundLayer) && Physics2D.OverlapCircle((Vector2)transform.position + boxCollider2D.size.x/2 * Vector2.right + 0.1f * boxCollider2D.size.y * Vector2.up, collisionRadius, groundLayer);
-        onWallLeft = Physics2D.OverlapCircle((Vector2)transform.position - boxCollider2D.size.x/2 * Vector2.right - 0.4f * boxCollider2D.size.y * Vector2.up, collisionRadius, groundLayer) && Physics2D.OverlapCircle((Vector2)transform.position - boxCollider2D.size.x/2 * Vector2.right + 0.1f * boxCollider2D.size.y * Vector2.up, collisionRadius, groundLayer);
+        onWallRight = Physics2D.OverlapCircle((Vector2)transform.position + boxCollider2D.size.x/2 * Vector2.right - 0.4f * boxCollider2D.size.y * Vector2.up, collisionRadius, groundLayer)
+                   && Physics2D.OverlapCircle((Vector2)transform.position + boxCollider2D.size.x/2 * Vector2.right + 0.1f * boxCollider2D.size.y * Vector2.up, collisionRadius, groundLayer);
+        onWallLeft = Physics2D.OverlapCircle((Vector2)transform.position - boxCollider2D.size.x/2 * Vector2.right - 0.4f * boxCollider2D.size.y * Vector2.up, collisionRadius, groundLayer) 
+                  && Physics2D.OverlapCircle((Vector2)transform.position - boxCollider2D.size.x/2 * Vector2.right + 0.1f * boxCollider2D.size.y * Vector2.up, collisionRadius, groundLayer);
         onWall = onWallLeft || onWallRight;
 
         //Wallside wanneer de speler op de muur is en niet de grond
