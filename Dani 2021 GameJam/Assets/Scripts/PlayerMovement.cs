@@ -10,15 +10,10 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce;
     public float slideSpeed;
     public float wallJumpForce;
-<<<<<<< HEAD
     public bool wallJumpEnabled;
-=======
-    public float wallJumpDuration;
->>>>>>> 8c66c89958f6076f8ef3841155bf26f5e3f1f88d
     public Rigidbody2D rb;
     public BoxCollider2D boxCollider2D;
     public LayerMask groundLayer;
-    public LayerMask enemyLayer;
     public SpriteRenderer spriteRenderer;
     private float collisionRadius = 0.1f;
     private float xScale;
@@ -45,20 +40,21 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             //als de speler alleen op de grond staat jumpt hij normaal
-            if (IsGrounded() || IsOnEnemy())
+            if (IsGrounded())
             {
                 Jump(jumpForce);
             }
             //bij een wallslide springt de speler ook weg van de muur
             else if (onWallRight)
             {
-                rb.velocity = new Vector2(-wallJumpForce, jumpForce);
+                rb.velocity = new Vector2(wallJumpForce, jumpForce);
             }
             else if (onWallLeft)
             {
-                rb.velocity = new Vector2(wallJumpForce, jumpForce);
+                rb.velocity = new Vector2(-wallJumpForce, jumpForce);
             }
         }
+
         //dash
         bool playerMoveInput = (Input.GetAxis("Horizontal") > 0 || Input.GetAxis("Vertical") > 0);
 
@@ -158,14 +154,6 @@ public class PlayerMovement : MonoBehaviour
         //returns true wanneer de ray een object met groundlayer raakt, anders false
         float margin = 0.1f;
         RaycastHit2D ray = Physics2D.BoxCast(boxCollider2D.bounds.center, boxCollider2D.bounds.size, 0f, Vector2.down, margin, groundLayer);
-        return ray.collider != null;
-    }
-    private bool IsOnEnemy()
-    {
-        //Stuurt een ray van het midden van de speler naar beneden tot de rand van de boxcollider + margin
-        //returns true wanneer de ray een object met enemyLayer raakt, anders false
-        float margin = 0.1f;
-        RaycastHit2D ray = Physics2D.BoxCast(boxCollider2D.bounds.center, boxCollider2D.bounds.size, 0f, Vector2.down, margin, enemyLayer);
         return ray.collider != null;
     }
 }
