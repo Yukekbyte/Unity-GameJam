@@ -207,7 +207,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5274821967573254281}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.17, y: -8.61, z: -2}
+  m_LocalPosition: {x: -21.189, y: -0.236, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5274821966628222243}
@@ -355,7 +355,7 @@ MonoBehaviour:
   anim: {fileID: 5274821966628222429}
   attackPoint: {fileID: 5274821966525419496}
   attackRange: 0.71
-  damage: 1
+  attackDamage: 1
   attackRate: 2
   enemyLayers:
     serializedVersion: 2
@@ -405,3 +405,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   souls: 0
+  playerAttack: {fileID: 0}
+  playerMovement: {fileID: 0}
