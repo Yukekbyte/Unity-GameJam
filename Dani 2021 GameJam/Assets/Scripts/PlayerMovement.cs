@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce;
     public float slideSpeed;
     public float wallJumpForce;
+    public float wallJumpDuration;
     public bool wallJumpEnabled;
     public Rigidbody2D rb;
     public BoxCollider2D boxCollider2D;
@@ -20,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
     private bool onWall;
     private bool onWallLeft;
     private bool onWallRight;
+    private bool wallJumping;
+    private float wallJumpTimer;
     private float nextDashAvailable;
     private float dashTimer;
     private bool dashing;
@@ -67,7 +70,7 @@ public class PlayerMovement : MonoBehaviour
             nextDashAvailable = Time.time + 1f/dashRate;
             dashTimer = dashDuration;
         }
-        if (dashTimer >= 0)
+        if (dashing)
         {
             Dash();
             dashTimer -= Time.deltaTime;
@@ -83,6 +86,18 @@ public class PlayerMovement : MonoBehaviour
         onWallLeft = Physics2D.OverlapCircle((Vector2)transform.position - boxCollider2D.size.x/2 * Vector2.right - 0.4f * boxCollider2D.size.y * Vector2.up, collisionRadius, groundLayer) 
                   && Physics2D.OverlapCircle((Vector2)transform.position - boxCollider2D.size.x/2 * Vector2.right + 0.1f * boxCollider2D.size.y * Vector2.up, collisionRadius, groundLayer);
         onWall = onWallLeft || onWallRight;
+
+        //Walljump
+        if (onWall && !IsGrounded() && Input.GetKeyDown(KeyCode.Space) && wallJumpEnabled && !wallJumping)
+        {
+            wallJumping = true;
+            wallJumpTimer = wallJumpDuration;
+        }
+        if (wallJumping)
+        {
+            wallJumpTimer -= Time.time;
+        }
+
 
         //Wallside wanneer de speler op de muur is en niet de grond
         if (onWall && !IsGrounded() && rb.velocity.y < 0)
@@ -107,7 +122,7 @@ public class PlayerMovement : MonoBehaviour
         Vector2 dir = new Vector2(x, y);
 
         //Walk
-        if (!dashing)
+        if (!dashing || !wallJumping)
         {
             Walk(dir);
         }
