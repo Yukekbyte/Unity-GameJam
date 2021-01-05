@@ -19,8 +19,6 @@ public class EnemyHealth : MonoBehaviour
         if (!dead)
         {
             health -= amount;
-
-            Debug.Log("I took "+amount + " damage!");
             
             //Destroys object if health gone and not dead yet
             if(health <= 0 && !dead)

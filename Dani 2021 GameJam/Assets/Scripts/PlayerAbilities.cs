@@ -6,12 +6,12 @@ public class PlayerAbilities : MonoBehaviour
     public int souls = 0;
     public PlayerAttack playerAttack;
     public PlayerMovement playerMovement;
+    public GameManager gameManager;
     public GameObject abilityInfo;
     public TextMeshProUGUI abilityInfoTitle;
     public TextMeshProUGUI abilityInfoExplanation;
-    public float displayAbilityInfoDuration;
-    float displayAbilityInfoTimer;
-    bool showingAbilityInfo;
+    int abilityInfoDuration = 100;
+    float abilityInfoTimer;
     int previous_souls;
 
     void Awake()
@@ -20,13 +20,17 @@ public class PlayerAbilities : MonoBehaviour
         abilityInfo.SetActive(false);
         playerAttack = GameObject.FindObjectOfType<PlayerAttack>();
         playerMovement = GameObject.FindObjectOfType<PlayerMovement>();
+        TextMeshProUGUI[] abilityInfoText = abilityInfo.GetComponentsInChildren<TextMeshProUGUI>();
+        print(abilityInfoText[0].name + abilityInfoText[1].name);
+        abilityInfoTitle = abilityInfoText[0];
+        abilityInfoExplanation = abilityInfoText[1];
+        gameManager = GameObject.FindObjectOfType<GameManager>();
         playerMovement.wallJumpEnabled = false;
         playerMovement.dashEnabled = false;
     }
     public void AddSoul()
     {
         souls++;
-        print(souls);
     }
 
     void Update()
@@ -53,7 +57,7 @@ public class PlayerAbilities : MonoBehaviour
                 case 1:
                 {
                     playerMovement.wallJumpEnabled = true;
-                    string title = "WallJump ability";
+                    string title = "WallJump Ability";
                     string explanation = "Walljump ability is now unlocked. Jump while sliding down a wall to walljump. ";
                     DisplayAbilityInfo(title, explanation);
                     break;
@@ -61,59 +65,57 @@ public class PlayerAbilities : MonoBehaviour
                 case 3:
                 {
                     playerMovement.dashEnabled = true;
-                    string title = "";
-                    string explanation = "";
+                    string title = "Dash Ability";
+                    string explanation = "Dash ability is now unlocked. Press shift while moving to dash.";
                     DisplayAbilityInfo(title, explanation);
                     break;
                 }
                 case 5:
                 {
                     AttackDamageUp();
-                    string title = "";
-                    string explanation = "";
+                    string title = "Attack Damage";
+                    string explanation = "Attack damage is now increased.";
                     DisplayAbilityInfo(title, explanation);
                     break;
                 }
                 case 7:
                 {
                     AttackSpeedUp();
-                    string title = "";
-                    string explanation = "";
+                    string title = "Attack Speed";
+                    string explanation = "Attack speed is now increased.";
                     DisplayAbilityInfo(title, explanation);
                     break;
                 }
                 case 10:
                 {
                     AttackRangeUp();
-                    string title = "";
-                    string explanation = "";
+                    string title = "Attack Range";
+                    string explanation = "Attack range is now increased.";
                     DisplayAbilityInfo(title, explanation);
                     break;
                 }
             }
         }
-
         previous_souls = souls;
-
-        if (showingAbilityInfo)
+        if (abilityInfoTimer >= -1)
         {
-            displayAbilityInfoTimer -= Time.deltaTime;
+            abilityInfoTimer -= 1;
         }
-        if (displayAbilityInfoTimer < 0)
+
+        if (Input.anyKey && abilityInfoTimer < 0)
         {
-            showingAbilityInfo = false;
+            gameManager.ResumeGame();
             abilityInfo.SetActive(false);
         }
-
     }
 
     void DisplayAbilityInfo(string title, string explanation)
     {
-        displayAbilityInfoTimer = displayAbilityInfoDuration;
+        gameManager.PauseGame();
+        abilityInfoTimer = abilityInfoDuration;
         abilityInfo.SetActive(true);
         abilityInfoTitle.text = title;
         abilityInfoExplanation.text = explanation;
-        showingAbilityInfo = true;
     }
 
     void AttackSpeedUp()
@@ -123,10 +125,10 @@ public class PlayerAbilities : MonoBehaviour
 
     void AttackDamageUp()
     {
-        playerAttack.attackDamage++;
+        playerAttack.attackDamage += 1;
     }
     public void AttackRangeUp()
     {
-        // attackRange vergroten
+        playerAttack.attackRange *= 2;
     }
 }
