@@ -208,7 +208,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5274821967573254281}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21.189, y: -0.236, z: -2}
+  m_LocalPosition: {x: -20.01, y: -0.26, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5274821966628222243}
@@ -331,7 +331,7 @@ MonoBehaviour:
   dashSpeed: 10000
   dashDuration: 0.15
   dashRate: 1
-  dashEnabled: 1
+  dashEnabled: 0
   jumpForce: 18.9
   slideSpeed: 350
   wallJumpForce: 6
