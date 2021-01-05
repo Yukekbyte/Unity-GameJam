@@ -81,7 +81,6 @@ public class PlayerMovement : MonoBehaviour
             if (wallJumpTimer < 0)
             {
                 wallJumping = false;
-                rb.velocity = new Vector2(0, 0);
             }
         }
         if (IsGrounded())

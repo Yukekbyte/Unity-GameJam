@@ -327,15 +327,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 8928739124835314500}
-  playerSpeed: 500
+  playerSpeed: 25
   dashSpeed: 10000
   dashDuration: 0.15
   dashRate: 1
   dashEnabled: 1
   jumpForce: 18.9
   slideSpeed: 350
-  wallJumpForce: 1000
-  wallJumpDuration: 1
+  wallJumpForce: 6
+  wallJumpDuration: 0.5
   wallJumpEnabled: 1
   rb: {fileID: 0}
   boxCollider2D: {fileID: 0}
