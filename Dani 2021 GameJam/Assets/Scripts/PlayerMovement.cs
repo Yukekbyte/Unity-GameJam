@@ -154,7 +154,7 @@ public class PlayerMovement : MonoBehaviour
     //Walk method met een direction (dir) nodig
     void Walk(float dir)
     {
-        rb.velocity = new Vector2(dir * playerSpeed, rb.velocity.y);
+        rb.velocity = new Vector2(dir * playerSpeed * Time.deltaTime, rb.velocity.y);
     }
     
     //Dash method
