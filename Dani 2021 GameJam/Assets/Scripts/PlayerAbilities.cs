@@ -53,7 +53,7 @@ public class PlayerAbilities : MonoBehaviour
                 case 1:
                 {
                     playerMovement.wallJumpEnabled = true;
-                    string title = "WallJump ability";
+                    string title = "WallJump Ability";
                     string explanation = "Walljump ability is now unlocked. Jump while sliding down a wall to walljump. ";
                     DisplayAbilityInfo(title, explanation);
                     break;
@@ -61,32 +61,32 @@ public class PlayerAbilities : MonoBehaviour
                 case 3:
                 {
                     playerMovement.dashEnabled = true;
-                    string title = "";
-                    string explanation = "";
+                    string title = "Dash Ability";
+                    string explanation = "Dash ability is now unlocked. Press shift while moving to dash.";
                     DisplayAbilityInfo(title, explanation);
                     break;
                 }
                 case 5:
                 {
                     AttackDamageUp();
-                    string title = "";
-                    string explanation = "";
+                    string title = "Attack Damage";
+                    string explanation = "Attack damage is now increased.";
                     DisplayAbilityInfo(title, explanation);
                     break;
                 }
                 case 7:
                 {
                     AttackSpeedUp();
-                    string title = "";
-                    string explanation = "";
+                    string title = "Attack Speed";
+                    string explanation = "Attack speed is now increased.";
                     DisplayAbilityInfo(title, explanation);
                     break;
                 }
                 case 10:
                 {
                     AttackRangeUp();
-                    string title = "";
-                    string explanation = "";
+                    string title = "Attack Range";
+                    string explanation = "Attack range is now increased.";
                     DisplayAbilityInfo(title, explanation);
                     break;
                 }
@@ -95,7 +95,7 @@ public class PlayerAbilities : MonoBehaviour
 
         previous_souls = souls;
 
-        if (showingAbilityInfo)
+        if (showingAbilityInfo && Input.anyKey)
         {
             gameManager.ResumeGame();
             showingAbilityInfo = false;

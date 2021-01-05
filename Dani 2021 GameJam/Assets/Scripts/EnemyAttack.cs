@@ -14,7 +14,6 @@ public class EnemyAttack : MonoBehaviour
         if (col.gameObject.CompareTag("Player"))
         {
             inAttackRange = true;
-            Debug.Log("attacking player");
         }
     }
     void OnTriggerExit2D(Collider2D col)
