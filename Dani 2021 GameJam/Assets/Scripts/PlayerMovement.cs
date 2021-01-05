@@ -24,7 +24,6 @@ public class PlayerMovement : MonoBehaviour
     private bool onWallRight;
     private bool wallJumping;
     private float wallJumpTimer;
-    private float wallJumpDirection;
     private float nextDashAvailable;
     private float dashTimer;
     private bool dashing;
@@ -39,28 +38,52 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void Update()
-    {
+    {   
+        //Check if onWall with circles
+        onWallRight = Physics2D.OverlapCircle((Vector2)transform.position + boxCollider2D.size.x/2 * Vector2.right - 0.4f * boxCollider2D.size.y * Vector2.up, collisionRadius, groundLayer)
+                   && Physics2D.OverlapCircle((Vector2)transform.position + boxCollider2D.size.x/2 * Vector2.right + 0.1f * boxCollider2D.size.y * Vector2.up, collisionRadius, groundLayer);
+        onWallLeft = Physics2D.OverlapCircle((Vector2)transform.position - boxCollider2D.size.x/2 * Vector2.right - 0.4f * boxCollider2D.size.y * Vector2.up, collisionRadius, groundLayer) 
+                  && Physics2D.OverlapCircle((Vector2)transform.position - boxCollider2D.size.x/2 * Vector2.right + 0.1f * boxCollider2D.size.y * Vector2.up, collisionRadius, groundLayer);
+        onWall = onWallLeft || onWallRight;
+
         //Jump
         if (Input.GetKeyDown(KeyCode.Space))
         {   
-            animator.SetBool("IsJumping", true);
 
             //als de speler alleen op de grond staat jumpt hij normaal
             if (IsGrounded())
-            {
-                Jump(jumpForce);
+            {   
+                animator.SetBool("IsJumping", true);
+                Jump();
             }
             //bij een wallslide springt de speler ook weg van de muur
-            else if (onWallRight)
-            {
-                rb.velocity = new Vector2(wallJumpForce, jumpForce);
-            }
-            else if (onWallLeft)
-            {
-                rb.velocity = new Vector2(-wallJumpForce, jumpForce);
+            else if (onWall && wallJumpEnabled && !wallJumping)
+            {   
+                animator.SetBool("IsJumping", true);
+                wallJumping = true;
+                wallJumpTimer = wallJumpDuration;
+                if (onWallRight)
+                {
+                    WallJump(-1);
+                }
+                else if (onWallLeft)
+                {
+                    WallJump(1);
+                }
+                
             }
         }
-    
+
+        if (wallJumping)
+        {
+            print(rb.velocity);
+            wallJumpTimer -= Time.deltaTime;
+            if (wallJumpTimer < 0)
+            {
+                wallJumping = false;
+                rb.velocity = new Vector2(0, 0);
+            }
+        }
         if (IsGrounded())
         {
             animator.SetBool("IsJumping", false);
@@ -90,39 +113,6 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        //Check if onWall with circles
-        onWallRight = Physics2D.OverlapCircle((Vector2)transform.position + boxCollider2D.size.x/2 * Vector2.right - 0.4f * boxCollider2D.size.y * Vector2.up, collisionRadius, groundLayer)
-                   && Physics2D.OverlapCircle((Vector2)transform.position + boxCollider2D.size.x/2 * Vector2.right + 0.1f * boxCollider2D.size.y * Vector2.up, collisionRadius, groundLayer);
-        onWallLeft = Physics2D.OverlapCircle((Vector2)transform.position - boxCollider2D.size.x/2 * Vector2.right - 0.4f * boxCollider2D.size.y * Vector2.up, collisionRadius, groundLayer) 
-                  && Physics2D.OverlapCircle((Vector2)transform.position - boxCollider2D.size.x/2 * Vector2.right + 0.1f * boxCollider2D.size.y * Vector2.up, collisionRadius, groundLayer);
-        onWall = onWallLeft || onWallRight;
-
-        //Walljump
-        if (onWall && !IsGrounded() && Input.GetKeyDown(KeyCode.Space) && wallJumpEnabled && !wallJumping)
-        {
-            wallJumping = true;
-            wallJumpTimer = wallJumpDuration;
-            if (onWallRight)
-            {
-                wallJumpDirection = 1;
-            }
-            else if (onWallLeft)
-            {
-                wallJumpDirection = -1;
-            }
-            WallJump();
-        }
-        if (wallJumping)
-        {
-            wallJumpTimer -= Time.time;
-            if (wallJumpTimer < 0)
-            {
-                wallJumping = false;
-                rb.velocity = new Vector2(0, 0);
-            }
-        }
-
-
         //Wallside wanneer de speler op de muur is en niet de grond
         if (onWall && !IsGrounded() && rb.velocity.y < 0)
         {
@@ -141,32 +131,32 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         //Player Input
-        float x = Input.GetAxis("Horizontal");
-        float y = Input.GetAxis("Vertical");
-        Vector2 dir = new Vector2(x, y);
-        animator.SetFloat("Speed", Mathf.Abs(x));
+        float dir = Input.GetAxis("Horizontal");
+        animator.SetFloat("Speed", Mathf.Abs(dir));
 
-        //Walk
         if (!dashing && !wallJumping)
         {
+            //Walk
             Walk(dir);
+
+            //Player faces his direction
+            if(dir > 0)
+            {
+                transform.localScale = new Vector3(xScale, transform.localScale.y, transform.localScale.z);
+            }
+            if(dir < 0)
+            {
+                transform.localScale = new Vector3(-xScale, transform.localScale.y, transform.localScale.z);
+            }
         }
 
-        //Player faces his direction
-        if(dir.x > 0)
-        {
-            transform.localScale = new Vector3(xScale, transform.localScale.y, transform.localScale.z);
-        }
-        if(dir.x < 0)
-        {
-            transform.localScale = new Vector3(-xScale, transform.localScale.y, transform.localScale.z);
-        }
+        
     }
 
     //Walk method met een direction (dir) nodig
-    void Walk(Vector2 dir)
+    void Walk(float dir)
     {
-        rb.velocity = new Vector2(dir.x * playerSpeed * Time.deltaTime, rb.velocity.y);
+        rb.velocity = new Vector2(dir * playerSpeed, rb.velocity.y);
     }
     
     //Dash method
@@ -181,13 +171,14 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector2(rb.velocity.x, -slideSpeed * Time.deltaTime);
     }
 
-    void WallJump()
+    void WallJump(int directionMultiplier)
     {
-        rb.velocity += new Vector2(wallJumpDirection * wallJumpForce, jumpForce);
+        rb.velocity += new Vector2(directionMultiplier * wallJumpForce, jumpForce);
+        transform.localScale = new Vector3(xScale * directionMultiplier, transform.localScale.y, transform.localScale.z);
     }
 
     //Jump method met een jumpforce nodig
-    void Jump(float jumpForce)
+    void Jump()
     {
         rb.velocity += new Vector2(0, jumpForce);
     }
