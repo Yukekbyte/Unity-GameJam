@@ -76,7 +76,6 @@ public class PlayerMovement : MonoBehaviour
 
         if (wallJumping)
         {
-            print(rb.velocity);
             wallJumpTimer -= Time.deltaTime;
             if (wallJumpTimer < 0)
             {
