@@ -6,11 +6,12 @@ public class PlayerAbilities : MonoBehaviour
     public int souls = 0;
     public PlayerAttack playerAttack;
     public PlayerMovement playerMovement;
+    public GameManager gameManager;
     public GameObject abilityInfo;
     public TextMeshProUGUI abilityInfoTitle;
     public TextMeshProUGUI abilityInfoExplanation;
-    public GameManager gameManager;
-    bool showingAbilityInfo;
+    int abilityInfoDuration = 100;
+    float abilityInfoTimer;
     int previous_souls;
 
     void Awake()
@@ -26,7 +27,6 @@ public class PlayerAbilities : MonoBehaviour
     public void AddSoul()
     {
         souls++;
-        print(souls);
     }
 
     void Update()
@@ -92,25 +92,26 @@ public class PlayerAbilities : MonoBehaviour
                 }
             }
         }
-
         previous_souls = souls;
-
-        if (showingAbilityInfo && Input.anyKey)
+        if (abilityInfoTimer >= -1)
         {
-            gameManager.ResumeGame();
-            showingAbilityInfo = false;
-            abilityInfo.SetActive(false);
+            abilityInfoTimer -= 1;
         }
 
+        if (Input.anyKey && abilityInfoTimer < 0)
+        {
+            gameManager.ResumeGame();
+            abilityInfo.SetActive(false);
+        }
     }
 
     void DisplayAbilityInfo(string title, string explanation)
     {
         gameManager.PauseGame();
+        abilityInfoTimer = abilityInfoDuration;
         abilityInfo.SetActive(true);
         abilityInfoTitle.text = title;
         abilityInfoExplanation.text = explanation;
-        showingAbilityInfo = true;
     }
 
     void AttackSpeedUp()
