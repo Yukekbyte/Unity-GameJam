@@ -42,9 +42,18 @@ public class EnemyAttack : MonoBehaviour
         if (cd < 0)
         {
             anim.SetTrigger("attack");
-            FindObjectOfType<PlayerHealth>().TakeDamage(damage);
             cd = attackCooldown;
+            Invoke("Damage", 1f);
 
+
+        }
+    }
+    void Damage()
+    {
+        if (inAttackRange)
+        {
+            FindObjectOfType<PlayerHealth>().TakeDamage(damage);
+            
         }
     }
 }
