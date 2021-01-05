@@ -20,6 +20,10 @@ public class PlayerAbilities : MonoBehaviour
         abilityInfo.SetActive(false);
         playerAttack = GameObject.FindObjectOfType<PlayerAttack>();
         playerMovement = GameObject.FindObjectOfType<PlayerMovement>();
+        TextMeshProUGUI[] abilityInfoText = abilityInfo.GetComponentsInChildren<TextMeshProUGUI>();
+        print(abilityInfoText[0].name + abilityInfoText[1].name);
+        abilityInfoTitle = abilityInfoText[0];
+        abilityInfoExplanation = abilityInfoText[1];
         gameManager = GameObject.FindObjectOfType<GameManager>();
         playerMovement.wallJumpEnabled = false;
         playerMovement.dashEnabled = false;
