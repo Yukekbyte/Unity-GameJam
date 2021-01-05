@@ -132,7 +132,7 @@ public class PlayerMovement : MonoBehaviour
         float dir = Input.GetAxis("Horizontal");
         animator.SetFloat("Speed", Mathf.Abs(dir));
 
-        if (!dashing && !wallJumping)
+    if (!dashing && !wallJumping && PlayerAttack.IsAttacking == 0)
         {
             //Walk
             Walk(dir);
