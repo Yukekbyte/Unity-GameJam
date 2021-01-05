@@ -327,7 +327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 8928739124835314500}
-  playerSpeed: 12
+  playerSpeed: 500
   dashSpeed: 10000
   dashDuration: 0.15
   dashRate: 1
