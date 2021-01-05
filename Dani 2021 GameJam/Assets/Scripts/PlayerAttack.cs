@@ -6,15 +6,21 @@ public class PlayerAttack : MonoBehaviour
     public Animation anim;
     public Transform attackPoint;
     public float attackRange;
-    public float attackDamage;
+    public int attackDamage;
     public float attackRate;
     public LayerMask enemyLayers;
     public static int IsAttacking = 0;
     public float AttackDelay = 0f;
-    
     private float nextAttackTime = 0f;
 
-    void Update()
+    public void Awake()
+    {
+        attackRange = 0.71f;
+        attackDamage = 1;
+        attackRate = 2;
+    }
+
+    public void Update()
     {
         //Attack when left click
         if (Input.GetMouseButtonDown(0) && Time.time >= nextAttackTime)

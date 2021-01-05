@@ -121,10 +121,10 @@ public class PlayerAbilities : MonoBehaviour
 
     void AttackDamageUp()
     {
-        playerAttack.attackDamage++;
+        playerAttack.attackDamage += 1;
     }
     public void AttackRangeUp()
     {
-        // attackRange vergroten
+        playerAttack.attackRange *= 2;
     }
 }
