@@ -6,6 +6,7 @@ public class EnemyMovement : MonoBehaviour
     public BoxCollider2D boxCollider2D;
     public LayerMask GroundLayer;
     public GameObject Player;
+    public Animator Animator;
     public float EnemySpeed;
     public float RoamRadius;
     public float VisionRadius;

@@ -2,7 +2,8 @@
 
 public class EnemyAttack : MonoBehaviour
 {
-    public Animation anim;
+
+    public Animator anim;
     private bool inAttackRange = false;
     public float damage;
     public float attackCooldown;
@@ -40,9 +41,10 @@ public class EnemyAttack : MonoBehaviour
     {
         if (cd < 0)
         {
-            anim.Play("EnemyAttackAnim");
+            anim.SetTrigger("attack");
             FindObjectOfType<PlayerHealth>().TakeDamage(damage);
             cd = attackCooldown;
+
         }
     }
 }

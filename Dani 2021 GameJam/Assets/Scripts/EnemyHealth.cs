@@ -3,6 +3,7 @@
 public class EnemyHealth : MonoBehaviour
 {
     public float maxHealth;
+    public Animator animator;
     private float health;
     public Sprite enemyDeadSprite;
     private bool dead = false;
@@ -26,6 +27,7 @@ public class EnemyHealth : MonoBehaviour
             {
                 Die();
                 dead = true;
+                animator.SetBool("Dead", true);
             }
         }
     }
