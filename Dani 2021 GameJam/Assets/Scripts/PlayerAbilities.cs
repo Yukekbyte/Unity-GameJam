@@ -9,8 +9,7 @@ public class PlayerAbilities : MonoBehaviour
     public GameObject abilityInfo;
     public TextMeshProUGUI abilityInfoTitle;
     public TextMeshProUGUI abilityInfoExplanation;
-    public float displayAbilityInfoDuration;
-    float displayAbilityInfoTimer;
+    public GameManager gameManager;
     bool showingAbilityInfo;
     int previous_souls;
 
@@ -20,6 +19,7 @@ public class PlayerAbilities : MonoBehaviour
         abilityInfo.SetActive(false);
         playerAttack = GameObject.FindObjectOfType<PlayerAttack>();
         playerMovement = GameObject.FindObjectOfType<PlayerMovement>();
+        gameManager = GameObject.FindObjectOfType<GameManager>();
         playerMovement.wallJumpEnabled = false;
         playerMovement.dashEnabled = false;
     }
@@ -97,10 +97,7 @@ public class PlayerAbilities : MonoBehaviour
 
         if (showingAbilityInfo)
         {
-            displayAbilityInfoTimer -= Time.deltaTime;
-        }
-        if (displayAbilityInfoTimer < 0)
-        {
+            gameManager.ResumeGame();
             showingAbilityInfo = false;
             abilityInfo.SetActive(false);
         }
@@ -109,7 +106,7 @@ public class PlayerAbilities : MonoBehaviour
 
     void DisplayAbilityInfo(string title, string explanation)
     {
-        displayAbilityInfoTimer = displayAbilityInfoDuration;
+        gameManager.PauseGame();
         abilityInfo.SetActive(true);
         abilityInfoTitle.text = title;
         abilityInfoExplanation.text = explanation;
