@@ -121,6 +121,99 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &65680488
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 65680489}
+  - component: {fileID: 65680492}
+  - component: {fileID: 65680491}
+  - component: {fileID: 65680490}
+  m_Layer: 5
+  m_Name: Text (8)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &65680489
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 65680488}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1581753150}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 238, y: -189}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &65680490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 65680488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8165cbc4f17e3046a4d8eb70acacee3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayOnAwake: 1
+  Delay: 0
+--- !u!114 &65680491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 65680488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.09518514, g: 0.86346614, b: 0.8773585, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: c9f6d0e7bc8541498c9a4799ba184ede, type: 3}
+    m_FontSize: 200
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 300
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: Or he wouldn't....
+--- !u!222 &65680492
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 65680488}
+  m_CullTransparentMesh: 0
 --- !u!1 &923045736
 GameObject:
   m_ObjectHideFlags: 0
@@ -172,7 +265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayOnAwake: 1
-  Delay: 20
+  Delay: 16
 --- !u!114 &923045739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265,7 +358,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayOnAwake: 1
-  Delay: 15
+  Delay: 12
 --- !u!114 &969213296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -358,7 +451,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayOnAwake: 1
-  Delay: 40
+  Delay: 37
 --- !u!114 &1028796564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -627,7 +720,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayOnAwake: 1
-  Delay: 35
+  Delay: 28
 --- !u!114 &1209100630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -663,8 +756,7 @@ MonoBehaviour:
   m_Text: 'So floyd embarked on a journey, that would change his life forever.
 
     He
-    would return a hero...                                                  or he
-    wouldn''t...'
+    would return a hero...'
 --- !u!222 &1209100631
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -724,7 +816,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayOnAwake: 1
-  Delay: 5
+  Delay: 4
 --- !u!114 &1233800880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -817,7 +909,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayOnAwake: 1
-  Delay: 10
+  Delay: 8
 --- !u!114 &1337689795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1024,6 +1116,7 @@ RectTransform:
   - {fileID: 1960971376}
   - {fileID: 1209100628}
   - {fileID: 1028796562}
+  - {fileID: 65680489}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1032,6 +1125,75 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1001 &1611039966
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5569714377573442388, guid: 3986d40be5a26a64bafe98234762f02e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5569714377573442388, guid: 3986d40be5a26a64bafe98234762f02e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.993865
+      objectReference: {fileID: 0}
+    - target: {fileID: 5569714377573442388, guid: 3986d40be5a26a64bafe98234762f02e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.4449991
+      objectReference: {fileID: 0}
+    - target: {fileID: 5569714377573442388, guid: 3986d40be5a26a64bafe98234762f02e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -118.86719
+      objectReference: {fileID: 0}
+    - target: {fileID: 5569714377573442388, guid: 3986d40be5a26a64bafe98234762f02e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5569714377573442388, guid: 3986d40be5a26a64bafe98234762f02e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5569714377573442388, guid: 3986d40be5a26a64bafe98234762f02e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5569714377573442388, guid: 3986d40be5a26a64bafe98234762f02e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5569714377573442388, guid: 3986d40be5a26a64bafe98234762f02e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5569714377573442388, guid: 3986d40be5a26a64bafe98234762f02e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5569714377573442388, guid: 3986d40be5a26a64bafe98234762f02e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5569714377573442389, guid: 3986d40be5a26a64bafe98234762f02e,
+        type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3986d40be5a26a64bafe98234762f02e, type: 3}
 --- !u!1 &1919888694
 GameObject:
   m_ObjectHideFlags: 0
@@ -1083,7 +1245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayOnAwake: 1
-  Delay: 25
+  Delay: 20
 --- !u!114 &1919888697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1176,7 +1338,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayOnAwake: 1
-  Delay: 30
+  Delay: 24
 --- !u!114 &1960971378
 MonoBehaviour:
   m_ObjectHideFlags: 0

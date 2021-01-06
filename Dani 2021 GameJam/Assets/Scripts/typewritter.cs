@@ -9,37 +9,43 @@ public class typewritter: MonoBehaviour
     public bool PlayOnAwake = true;
     public float Delay;
 
-void Awake()
-{
-    txt = GetComponent<Text>();
-    if (PlayOnAwake)
+    void Awake()
     {
-        ChangeText(txt.text, Delay);
+        txt = GetComponent<Text>();
+        if (PlayOnAwake)
+        {
+            ChangeText(txt.text, Delay);
+        }
+
     }
 
-}
-
-//Update text and start typewriter effect
-public void ChangeText(string _text, float _delay = 0f)
-{
-    StopCoroutine(PlayText()); //stop Coroutime if exist
-    story = _text;
-    txt.text = ""; //clean text
-    Invoke("Start_PlayText", _delay); //Invoke effect
-}
-
-void Start_PlayText()
-{
-    StartCoroutine(PlayText());
-}
-
-IEnumerator PlayText()
-{
-    foreach (char c in story)
+    //Update text and start typewriter effect
+    public void ChangeText(string _text, float _delay = 0f)
     {
-        txt.text += c;
-        yield return new WaitForSeconds(0.06f);
+        GameObject.FindObjectOfType<AudioManager>().Stop("Theme");
+        GameObject.FindObjectOfType<AudioManager>().Play("Theme");
+        StopCoroutine(PlayText()); //stop Coroutime if exist
+        story = _text;
+        txt.text = ""; //clean text
+
+        Invoke("Start_PlayText", _delay); //Invoke effect
+        
     }
-}
+
+    void Start_PlayText()
+    {
+        StartCoroutine(PlayText());
+    }
+
+    IEnumerator PlayText()
+    {
+        GameObject.FindObjectOfType<AudioManager>().Play("Typewritter");
+        foreach (char c in story)
+        {
+            txt.text += c;
+            yield return new WaitForSeconds(0.05f);
+        }
+        GameObject.FindObjectOfType<AudioManager>().Stop("Typewritter");
+    }
 
 }
