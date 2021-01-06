@@ -116,7 +116,7 @@ public class PlayerAbilities : MonoBehaviour
         }
     }
 
-    void DisplayAbilityInfo(string title, string explanation)
+    public void DisplayAbilityInfo(string title, string explanation)
     {   if (soulsBeforeActiveLevel < souls)
         {
             gameManager.PauseGame();
