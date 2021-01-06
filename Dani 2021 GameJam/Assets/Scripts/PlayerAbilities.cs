@@ -12,6 +12,7 @@ public class PlayerAbilities : MonoBehaviour
     public TextMeshProUGUI abilityInfoExplanation;
     int abilityInfoDuration = 100;
     float abilityInfoTimer;
+    bool showingAbility;
     public static int soulsBeforeActiveLevel;
     int previousLoopSouls;
     
@@ -102,10 +103,11 @@ public class PlayerAbilities : MonoBehaviour
             abilityInfoTimer -= 1;
         }
 
-        if (Input.anyKey && abilityInfoTimer < 0)
+        if (Input.anyKey && abilityInfoTimer < 0 && showingAbility)
         {
             gameManager.ResumeGame();
             abilityInfo.SetActive(false);
+            showingAbility = false;
         }
     }
 
@@ -115,6 +117,7 @@ public class PlayerAbilities : MonoBehaviour
             gameManager.PauseGame();
             abilityInfoTimer = abilityInfoDuration;
             abilityInfo.SetActive(true);
+            showingAbility = true;
             abilityInfoTitle.text = title;
             abilityInfoExplanation.text = explanation;
         }
