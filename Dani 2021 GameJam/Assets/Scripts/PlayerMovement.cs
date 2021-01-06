@@ -89,6 +89,30 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("IsJumping", false);
         }
 
+        //dash
+        bool playerMoveInput = (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0);
+
+        if (Input.GetKeyDown(KeyCode.LeftShift) && (Time.time >= nextDashAvailable) && dashEnabled && playerMoveInput)
+        {   
+            float dashDirectionX = Input.GetAxis("Horizontal");
+            float dashDirectionY = Input.GetAxis("Vertical");
+            dashDirection = new Vector2(dashDirectionX, dashDirectionY);
+
+            dashing = true;
+            nextDashAvailable = Time.time + 1f/dashRate;
+            dashTimer = dashDuration;
+        }
+        if (dashing)
+        {   
+            Dash();
+            dashTimer -= Time.deltaTime;
+            if (dashTimer < 0)
+            {
+                dashing = false;
+                rb.velocity = new Vector2(0, 0);
+            }
+        }
+
         //Wallside wanneer de speler op de muur is en niet de grond
         if (onWall && !IsGrounded() && rb.velocity.y < 0)
         {
