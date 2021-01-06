@@ -27,6 +27,11 @@ public class PlayerAbilities : MonoBehaviour
         abilityInfoExplanation = abilityInfoText[1];
         gameManager = GameObject.FindObjectOfType<GameManager>();
         souls = PlayerAbilities.soulsBeforeActiveLevel;
+
+        DisplayAbilityInfo("", "");
+        abilityInfoTimer = -2;
+        showingAbility = false;
+        abilityInfo.SetActive(false);
     }
     public void AddSoul()
     {
