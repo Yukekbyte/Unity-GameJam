@@ -232,7 +232,7 @@ MonoBehaviour:
   dashSpeed: 10000
   dashDuration: 0.15
   dashRate: 1
-  dashEnabled: 0
+  dashEnabled: 1
   jumpForce: 18.9
   slideSpeed: 350
   wallJumpForce: 6
@@ -244,6 +244,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   spriteRenderer: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!114 &5274821967573254282
 MonoBehaviour:
   m_ObjectHideFlags: 0

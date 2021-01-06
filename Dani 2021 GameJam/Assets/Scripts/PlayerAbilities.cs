@@ -39,6 +39,7 @@ public class PlayerAbilities : MonoBehaviour
         // ***DO NOT TOUCH*** (unless needed)
         if (Input.GetKeyDown(KeyCode.E)) //als je e indrukt zullen alle enemies op het scherm in een array worden geplaatst
         {
+            GameObject.FindObjectOfType<AudioManager>().Play("Consume");
             GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
             //Voor elke enemy voert hij Destroy(); uit
