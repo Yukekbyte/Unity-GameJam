@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public float dashSpeed;
     public float dashDuration;
     public float dashRate;
+    public bool Wallslide;
     public bool dashEnabled;
     public float jumpForce;
     public float slideSpeed;
@@ -45,6 +46,16 @@ public class PlayerMovement : MonoBehaviour
         onWallLeft = Physics2D.OverlapCircle((Vector2)transform.position - boxCollider2D.size.x/2 * Vector2.right - 0.4f * boxCollider2D.size.y * Vector2.up, collisionRadius, groundLayer) 
                   && Physics2D.OverlapCircle((Vector2)transform.position - boxCollider2D.size.x/2 * Vector2.right + 0.1f * boxCollider2D.size.y * Vector2.up, collisionRadius, groundLayer);
         onWall = onWallLeft || onWallRight;
+
+        //Wallslide animation
+        if (onWall && !IsGrounded())
+            {
+                animator.SetBool("IsJumping", false);
+                animator.SetBool("Wallslide", true);
+            }
+        else animator.SetBool("Wallslide", false);
+
+
 
         //Jump
         if (Input.GetKeyDown(KeyCode.Space))
