@@ -35,6 +35,8 @@ public class PlayerMovement : MonoBehaviour
         boxCollider2D = GetComponent<BoxCollider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         xScale = transform.localScale.x;
+        wallJumpEnabled = false;
+        dashEnabled = false;
     }
 
     void Update()
@@ -160,6 +162,7 @@ public class PlayerMovement : MonoBehaviour
     //Dash method
     void Dash()
     {
+        
         rb.velocity = new Vector2(dashDirection.x * dashSpeed * Time.deltaTime, dashDirection.y * dashSpeed * Time.deltaTime);
     }
 
@@ -190,6 +193,4 @@ public class PlayerMovement : MonoBehaviour
         RaycastHit2D ray = Physics2D.BoxCast(boxCollider2D.bounds.center, boxCollider2D.bounds.size, 0f, Vector2.down, margin, groundLayer);
         return ray.collider != null;
     }
-    
-
 }
