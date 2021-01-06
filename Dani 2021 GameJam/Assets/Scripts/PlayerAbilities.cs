@@ -10,9 +10,9 @@ public class PlayerAbilities : MonoBehaviour
     public GameObject abilityInfo;
     public TextMeshProUGUI abilityInfoTitle;
     public TextMeshProUGUI abilityInfoExplanation;
-    public int soulsBeforeActiveLevel;
     int abilityInfoDuration = 100;
     float abilityInfoTimer;
+    public static int soulsBeforeActiveLevel = 1;
     int previousLoopSouls;
     
     void Awake()
@@ -22,12 +22,12 @@ public class PlayerAbilities : MonoBehaviour
         playerAttack = GameObject.FindObjectOfType<PlayerAttack>();
         playerMovement = GameObject.FindObjectOfType<PlayerMovement>();
         TextMeshProUGUI[] abilityInfoText = abilityInfo.GetComponentsInChildren<TextMeshProUGUI>();
-        print(abilityInfoText[0].name + abilityInfoText[1].name);
         abilityInfoTitle = abilityInfoText[0];
         abilityInfoExplanation = abilityInfoText[1];
         gameManager = GameObject.FindObjectOfType<GameManager>();
         playerMovement.wallJumpEnabled = false;
         playerMovement.dashEnabled = false;
+        souls = PlayerAbilities.soulsBeforeActiveLevel;
     }
     public void AddSoul()
     {
@@ -111,12 +111,14 @@ public class PlayerAbilities : MonoBehaviour
     }
 
     void DisplayAbilityInfo(string title, string explanation)
-    {
-        gameManager.PauseGame();
-        abilityInfoTimer = abilityInfoDuration;
-        abilityInfo.SetActive(true);
-        abilityInfoTitle.text = title;
-        abilityInfoExplanation.text = explanation;
+    {   if (soulsBeforeActiveLevel < souls)
+        {
+            gameManager.PauseGame();
+            abilityInfoTimer = abilityInfoDuration;
+            abilityInfo.SetActive(true);
+            abilityInfoTitle.text = title;
+            abilityInfoExplanation.text = explanation;
+        }
     }
 
     void AttackSpeedUp()
