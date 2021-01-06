@@ -63,7 +63,7 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: Dash
-    clip: {fileID: 8300000, guid: 63e7ebb3bb99fc34e9e3866d2e3a2258, type: 3}
+    clip: {fileID: 8300000, guid: 1f4a7b6352dcec949b0bd7cede35e6d1, type: 3}
     volume: 1
     pitch: 1
     loop: 0
@@ -81,6 +81,18 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: Consume
+    clip: {fileID: 8300000, guid: 014a8b90d30cf3e4f96f3c06ebb23dfd, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Complete Level
+    clip: {fileID: 8300000, guid: 3cbdb07de3afef84e8f5e3f21ca7af03, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Jump
     clip: {fileID: 8300000, guid: 014a8b90d30cf3e4f96f3c06ebb23dfd, type: 3}
     volume: 1
     pitch: 1
