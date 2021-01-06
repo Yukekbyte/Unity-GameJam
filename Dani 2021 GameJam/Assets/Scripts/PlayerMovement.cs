@@ -59,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
                 Jump();
             }
             //bij een wallslide springt de speler ook weg van de muur
-            else if (onWall && wallJumpEnabled && !wallJumping)
+            else if (onWall && wallJumpEnabled)
             {   
                 animator.SetBool("IsJumping", true);
                 wallJumping = true;
@@ -164,7 +164,7 @@ public class PlayerMovement : MonoBehaviour
     //Dash method
     void Dash()
     {
-        
+        rb.velocity = new Vector2(0, 0);
         rb.velocity += new Vector2(dashDirection.x * dashSpeed, dashDirection.y * dashSpeed);
     }
 
@@ -175,7 +175,8 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void WallJump(int directionMultiplier)
-    {
+    {   
+        rb.velocity = new Vector2(0, 0);
         rb.velocity = new Vector2(directionMultiplier * wallJumpForce, jumpForce);
         transform.localScale = new Vector3(xScale * directionMultiplier, transform.localScale.y, transform.localScale.z);
     }

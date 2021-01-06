@@ -187,7 +187,7 @@ MonoBehaviour:
   EnemySpeed: 1
   RoamRadius: 2
   VisionRadius: 5
-  ChaseBuffer: 0
+  ChaseBuffer: 0.5
   StartRight: 1
 --- !u!95 &8757594293199772985
 Animator:
