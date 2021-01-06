@@ -10,7 +10,7 @@ public class cutsceneSkip : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameObject.FindObjectOfType<AudioManager>().Stop("Theme");
     }
 
     // Update is called once per frame

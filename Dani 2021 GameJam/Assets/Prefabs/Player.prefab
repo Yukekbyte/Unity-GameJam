@@ -267,7 +267,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   rb: {fileID: 0}
-  AttackDelay: 1
+  AttackDelay: 0.5
 --- !u!114 &5274821967573254272
 MonoBehaviour:
   m_ObjectHideFlags: 0

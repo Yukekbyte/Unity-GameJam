@@ -22,8 +22,8 @@ public class typewritter: MonoBehaviour
     //Update text and start typewriter effect
     public void ChangeText(string _text, float _delay = 0f)
     {
-        GameObject.FindObjectOfType<AudioManager>().Stop("Theme");
-        GameObject.FindObjectOfType<AudioManager>().Play("Theme");
+
+
         StopCoroutine(PlayText()); //stop Coroutime if exist
         story = _text;
         txt.text = ""; //clean text
