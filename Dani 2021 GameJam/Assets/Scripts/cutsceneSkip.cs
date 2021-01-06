@@ -20,7 +20,8 @@ public class cutsceneSkip : MonoBehaviour
         {
             if (SceneManager.GetActiveScene().name == "CutsceneEnd")
             {
-                //loadscene
+                SceneManager.LoadScene("EndScreen");
+                GameObject.FindObjectOfType<AudioManager>().Play("Theme");
             }
             if (SceneManager.GetActiveScene().name == "CutsceneStart")
             {
