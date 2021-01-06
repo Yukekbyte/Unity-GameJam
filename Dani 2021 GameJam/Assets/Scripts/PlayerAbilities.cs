@@ -133,4 +133,9 @@ public class PlayerAbilities : MonoBehaviour
     {
         playerAttack.attackRange *= 2;
     }
+
+    void PlayAbilitySound()
+    {
+        GameObject.FindObjectOfType<AudioManager>().Play("Ability Unlocked");
+    }
 }
