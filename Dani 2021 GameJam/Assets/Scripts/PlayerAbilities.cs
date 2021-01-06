@@ -62,38 +62,43 @@ public class PlayerAbilities : MonoBehaviour
             {
                 case 1:
                 {
+                    GameObject.FindObjectOfType<AudioManager>().Play("Ability Unlocked");
                     playerMovement.wallJumpEnabled = true;
                     string title = "WallJump Ability";
                     string explanation = "Walljump ability is now unlocked. Jump while sliding down a wall to walljump. ";
                     DisplayAbilityInfo(title, explanation);
                     break;
                 }
-                case 3:
+                case 11:
                 {
+                    GameObject.FindObjectOfType<AudioManager>().Play("Ability Unlocked");
                     playerMovement.dashEnabled = true;
                     string title = "Dash Ability";
                     string explanation = "Dash ability is now unlocked. Press shift while moving to dash.";
                     DisplayAbilityInfo(title, explanation);
                     break;
                 }
-                case 5:
+                case 14:
                 {
+                    GameObject.FindObjectOfType<AudioManager>().Play("Ability Unlocked");
                     AttackDamageUp();
                     string title = "Attack Damage";
                     string explanation = "Attack damage is now increased.";
                     DisplayAbilityInfo(title, explanation);
                     break;
                 }
-                case 7:
+                case 17:
                 {
+                    GameObject.FindObjectOfType<AudioManager>().Play("Ability Unlocked");
                     AttackSpeedUp();
                     string title = "Attack Speed";
                     string explanation = "Attack speed is now increased.";
                     DisplayAbilityInfo(title, explanation);
                     break;
                 }
-                case 10:
+                case 20:
                 {
+                    GameObject.FindObjectOfType<AudioManager>().Play("Ability Unlocked");
                     AttackRangeUp();
                     string title = "Attack Range";
                     string explanation = "Attack range is now increased.";
