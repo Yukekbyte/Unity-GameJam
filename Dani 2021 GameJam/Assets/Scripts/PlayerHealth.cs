@@ -3,7 +3,7 @@
 public class PlayerHealth : MonoBehaviour
 {
     public float maxHealth;
-    private float health;
+    public static float health;
 
     void Awake()
     {
