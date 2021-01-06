@@ -2,12 +2,12 @@
 
 public class PortalScript : MonoBehaviour
 {
-    bool yes;
+    bool enemiesYes;
     void OnTriggerEnter2D()
     {
-        yes = GameObject.FindGameObjectsWithTag("Enemy") == null;
+        
         //only pass through if all enemies have been eaten
-        if(yes)
+        if(!enemiesYes)
         {
             GameObject.FindObjectOfType<AudioManager>().Play("Complete Level");
             GameObject.FindObjectOfType<GameManager>().LoadNextLevel();
@@ -15,11 +15,10 @@ public class PortalScript : MonoBehaviour
         {
             GameObject.FindObjectOfType<PlayerAbilities>().DisplayAbilityInfo("Get Revenge!", "Make sure to devour all the enemies before advancing to the next level.");
         }
-
-        print(yes);
     }
     void Update()
     {
-        print(yes);
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        enemiesYes = enemies.Length > 0;
     }
 }
