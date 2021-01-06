@@ -35,6 +35,8 @@ public class PlayerMovement : MonoBehaviour
         boxCollider2D = GetComponent<BoxCollider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         xScale = transform.localScale.x;
+        wallJumpEnabled = false;
+        dashEnabled = false;
     }
 
     void Update()
