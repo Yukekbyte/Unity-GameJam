@@ -229,8 +229,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 8928739124835314500}
   playerSpeed: 500
-  dashSpeed: 10000
-  dashDuration: 0.15
+  dashSpeed: 50
+  dashDuration: 0.1
   dashRate: 1
   dashEnabled: 1
   jumpForce: 18.9
