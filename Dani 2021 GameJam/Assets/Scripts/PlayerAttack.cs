@@ -34,6 +34,8 @@ public class PlayerAttack : MonoBehaviour
 
     void Attack()
     {
+        GameObject.FindObjectOfType<AudioManager>().Play("Punch");
+
         //Attack animation of the player
         animator.SetTrigger("Attack");
 

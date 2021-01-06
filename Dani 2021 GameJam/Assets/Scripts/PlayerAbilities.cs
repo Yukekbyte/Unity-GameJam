@@ -12,7 +12,8 @@ public class PlayerAbilities : MonoBehaviour
     public TextMeshProUGUI abilityInfoExplanation;
     int abilityInfoDuration = 100;
     float abilityInfoTimer;
-    public static int soulsBeforeActiveLevel = 1;
+    bool showingAbility;
+    public static int soulsBeforeActiveLevel;
     int previousLoopSouls;
     
     void Awake()
@@ -25,8 +26,6 @@ public class PlayerAbilities : MonoBehaviour
         abilityInfoTitle = abilityInfoText[0];
         abilityInfoExplanation = abilityInfoText[1];
         gameManager = GameObject.FindObjectOfType<GameManager>();
-        playerMovement.wallJumpEnabled = false;
-        playerMovement.dashEnabled = false;
         souls = PlayerAbilities.soulsBeforeActiveLevel;
     }
     public void AddSoul()
@@ -104,10 +103,11 @@ public class PlayerAbilities : MonoBehaviour
             abilityInfoTimer -= 1;
         }
 
-        if (Input.anyKey && abilityInfoTimer < 0)
+        if (Input.anyKey && abilityInfoTimer < 0 && showingAbility)
         {
             gameManager.ResumeGame();
             abilityInfo.SetActive(false);
+            showingAbility = false;
         }
     }
 
@@ -117,6 +117,7 @@ public class PlayerAbilities : MonoBehaviour
             gameManager.PauseGame();
             abilityInfoTimer = abilityInfoDuration;
             abilityInfo.SetActive(true);
+            showingAbility = true;
             abilityInfoTitle.text = title;
             abilityInfoExplanation.text = explanation;
         }
@@ -134,5 +135,10 @@ public class PlayerAbilities : MonoBehaviour
     public void AttackRangeUp()
     {
         playerAttack.attackRange *= 2;
+    }
+
+    void PlayAbilitySound()
+    {
+        GameObject.FindObjectOfType<AudioManager>().Play("Ability Unlocked");
     }
 }

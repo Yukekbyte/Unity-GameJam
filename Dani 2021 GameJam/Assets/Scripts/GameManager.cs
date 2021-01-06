@@ -66,18 +66,21 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("CutsceneStart");
         Time.timeScale = 1;
+        GameObject.FindObjectOfType<AudioManager>().Play("Start Game Button");
     }
 
     public void RestartLevel() // Restarts current level
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         ResumeGame();
+        GameObject.FindObjectOfType<AudioManager>().Play("Button");
     }
 
     public void LoadNextLevel() //Loads next level
     {
         PlayerAbilities.soulsBeforeActiveLevel = playerAbilities.souls;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        GameObject.FindObjectOfType<AudioManager>().Play("Button");
     }
 
     public void PauseGame() // Pauses Game
@@ -88,6 +91,7 @@ public class GameManager : MonoBehaviour
     public void ResumeGame() // Resumes Game
     {
         Time.timeScale = 1;
+        GameObject.FindObjectOfType<AudioManager>().Play("Button");
     }
 
     public void OpenSettings() // Opens settings
@@ -95,6 +99,7 @@ public class GameManager : MonoBehaviour
         Main.SetActive(false);
         Settings.SetActive(true);
         MenuLayer = 2;
+        GameObject.FindObjectOfType<AudioManager>().Play("Button");
     }
     public void GoBack() // Goes back one step in the UI
     {
@@ -110,11 +115,13 @@ public class GameManager : MonoBehaviour
             Main.SetActive(false);
             MenuLayer = 0;
         }
+        GameObject.FindObjectOfType<AudioManager>().Play("Button");
     }
 
     public void GoToMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
+        GameObject.FindObjectOfType<AudioManager>().Play("Button");
     }
 
     public void QuitGame() // Exits Game

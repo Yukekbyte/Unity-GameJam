@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     public BoxCollider2D boxCollider2D;
     public LayerMask groundLayer;
     public SpriteRenderer spriteRenderer;
+    public AudioManager audioManager;
     private float collisionRadius = 0.1f;
     private float xScale;
     private bool onWall;
@@ -37,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
         xScale = transform.localScale.x;
         wallJumpEnabled = false;
         dashEnabled = false;
+        audioManager = GameObject.FindObjectOfType<AudioManager>();
     }
 
     void Update()
@@ -51,10 +53,10 @@ public class PlayerMovement : MonoBehaviour
         //Jump
         if (Input.GetKeyDown(KeyCode.Space))
         {   
-
+            audioManager.Play("Jump");
             //als de speler alleen op de grond staat jumpt hij normaal
             if (IsGrounded())
-            {   
+            {
                 animator.SetBool("IsJumping", true);
                 Jump();
             }
@@ -101,10 +103,12 @@ public class PlayerMovement : MonoBehaviour
             dashing = true;
             nextDashAvailable = Time.time + 1f/dashRate;
             dashTimer = dashDuration;
+
+            Dash();
+            audioManager.Play("Dash");
         }
         if (dashing)
         {   
-            Dash();
             dashTimer -= Time.deltaTime;
             if (dashTimer < 0)
             {
@@ -163,7 +167,7 @@ public class PlayerMovement : MonoBehaviour
     void Dash()
     {
         
-        rb.velocity = new Vector2(dashDirection.x * dashSpeed * Time.deltaTime, dashDirection.y * dashSpeed * Time.deltaTime);
+        rb.velocity += new Vector2(dashDirection.x * dashSpeed, dashDirection.y * dashSpeed);
     }
 
     //Wallslide
