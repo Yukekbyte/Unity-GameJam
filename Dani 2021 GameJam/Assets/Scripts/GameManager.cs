@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public PlayerAbilities playerAbilities;
     bool SceneIsLevel;
     int MenuLayer;
-    
+
     public void Start()
     {   
         playerAbilities = GameObject.FindObjectOfType<PlayerAbilities>();
