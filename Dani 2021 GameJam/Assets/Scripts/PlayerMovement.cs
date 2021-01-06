@@ -171,7 +171,7 @@ public class PlayerMovement : MonoBehaviour
 
     void WallJump(int directionMultiplier)
     {
-        rb.velocity += new Vector2(directionMultiplier * wallJumpForce, jumpForce);
+        rb.velocity = new Vector2(directionMultiplier * wallJumpForce, jumpForce);
         transform.localScale = new Vector3(xScale * directionMultiplier, transform.localScale.y, transform.localScale.z);
     }
 

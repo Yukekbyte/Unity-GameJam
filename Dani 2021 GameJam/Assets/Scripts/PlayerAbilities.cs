@@ -10,10 +10,11 @@ public class PlayerAbilities : MonoBehaviour
     public GameObject abilityInfo;
     public TextMeshProUGUI abilityInfoTitle;
     public TextMeshProUGUI abilityInfoExplanation;
+    public int soulsBeforeActiveLevel;
     int abilityInfoDuration = 100;
     float abilityInfoTimer;
-    int previous_souls;
-
+    int previousLoopSouls;
+    
     void Awake()
     {
         abilityInfo = GameObject.Find("AbilityInfo");
@@ -50,7 +51,7 @@ public class PlayerAbilities : MonoBehaviour
         }
 
         //Power Ups
-        if (souls != previous_souls)
+        if (souls != previousLoopSouls)
         {
             switch(souls)
             {
@@ -96,7 +97,7 @@ public class PlayerAbilities : MonoBehaviour
                 }
             }
         }
-        previous_souls = souls;
+        previousLoopSouls = souls;
         if (abilityInfoTimer >= -1)
         {
             abilityInfoTimer -= 1;

@@ -5,11 +5,15 @@ public class GameManager : MonoBehaviour
 {   
     public GameObject Main;
     public GameObject Settings;
+    public PlayerAbilities playerAbilities;
     bool SceneIsLevel;
     int MenuLayer;
     
     public void Start()
-    {   switch (SceneManager.GetActiveScene().name)
+    {   
+        playerAbilities = GameObject.FindObjectOfType<PlayerAbilities>();
+        
+        switch (SceneManager.GetActiveScene().name)
         {
             case "MainMenu":
             {
@@ -67,12 +71,14 @@ public class GameManager : MonoBehaviour
     public void RestartLevel() // Restarts current level
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        playerAbilities.souls = playerAbilities.soulsBeforeActiveLevel;
         ResumeGame();
     }
 
     public void LoadNextLevel() //Loads next level
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        playerAbilities.soulsBeforeActiveLevel = playerAbilities.souls;
     }
 
     public void PauseGame() // Pauses Game
