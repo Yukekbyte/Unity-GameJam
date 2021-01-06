@@ -31,7 +31,7 @@ public class PlayerAbilities : MonoBehaviour
         DisplayAbilityInfo("", "");
         abilityInfoTimer = -2;
         showingAbility = false;
-        abilityInfo.SetActive(true);
+        abilityInfo.SetActive(false);
     }
     public void AddSoul()
     {
