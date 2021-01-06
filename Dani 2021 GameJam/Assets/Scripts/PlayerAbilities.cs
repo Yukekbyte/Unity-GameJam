@@ -25,8 +25,6 @@ public class PlayerAbilities : MonoBehaviour
         abilityInfoTitle = abilityInfoText[0];
         abilityInfoExplanation = abilityInfoText[1];
         gameManager = GameObject.FindObjectOfType<GameManager>();
-        playerMovement.wallJumpEnabled = false;
-        playerMovement.dashEnabled = false;
         souls = PlayerAbilities.soulsBeforeActiveLevel;
     }
     public void AddSoul()
