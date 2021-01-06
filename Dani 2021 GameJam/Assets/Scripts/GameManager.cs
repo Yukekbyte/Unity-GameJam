@@ -67,6 +67,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("CutsceneStart");
         Time.timeScale = 1;
         GameObject.FindObjectOfType<AudioManager>().Play("Start Game Button");
+        GameObject.FindObjectOfType<AudioManager>().Stop("Theme");
     }
 
     public void RestartLevel() // Restarts current level
