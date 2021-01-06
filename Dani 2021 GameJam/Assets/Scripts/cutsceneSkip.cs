@@ -18,11 +18,11 @@ public class cutsceneSkip : MonoBehaviour
     {
         if (Input.anyKey)
         {
-            if (SceneManager.GetActiveScene().name == "Cutscene end")
+            if (SceneManager.GetActiveScene().name == "CutsceneEnd")
             {
                 //loadscene
             }
-            if (SceneManager.GetActiveScene().name == "Cutscene start")
+            if (SceneManager.GetActiveScene().name == "CutsceneStart")
             {
                 SceneManager.LoadScene("level1");
                 GameObject.FindObjectOfType<AudioManager>().Play("Theme");
