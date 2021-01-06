@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public PlayerAttack playerAttack;
     bool SceneIsLevel;
     int MenuLayer;
-    
+
     public void Start()
     {   
         playerAbilities = GameObject.FindObjectOfType<PlayerAbilities>();
