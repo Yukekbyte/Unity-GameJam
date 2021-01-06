@@ -7,6 +7,7 @@ public class AudioManager : MonoBehaviour
 {
     public Sound[] sounds;
     public static AudioManager instance;
+    bool soundOn = true;
     void Awake()
     {
         if (instance == null)
@@ -44,5 +45,11 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
         Play("Theme");
+    }
+
+    public void SoundOnOff()
+    {
+        GameObject.FindObjectOfType<AudioListener>().enabled = !soundOn;
+        soundOn = !soundOn;
     }
 }
