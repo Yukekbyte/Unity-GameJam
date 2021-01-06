@@ -12,7 +12,7 @@ public class PlayerAbilities : MonoBehaviour
     public TextMeshProUGUI abilityInfoExplanation;
     int abilityInfoDuration = 100;
     float abilityInfoTimer;
-    public static int soulsBeforeActiveLevel = 1;
+    public static int soulsBeforeActiveLevel;
     int previousLoopSouls;
     
     void Awake()
