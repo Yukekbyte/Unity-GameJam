@@ -784,7 +784,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Wow! Floyd! You did it! you actualy pulled it of!
+  m_Text: Wow! Floyd! You did it! You actualy pulled it off!
 --- !u!222 &1405959204
 CanvasRenderer:
   m_ObjectHideFlags: 0
