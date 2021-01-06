@@ -25,6 +25,7 @@ public class cutsceneSkip : MonoBehaviour
             if (SceneManager.GetActiveScene().name == "Cutscene start")
             {
                 SceneManager.LoadScene("level1");
+                GameObject.FindObjectOfType<AudioManager>().Play("Theme");
             }
         }
     }
