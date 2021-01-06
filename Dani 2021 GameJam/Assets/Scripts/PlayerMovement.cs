@@ -101,10 +101,11 @@ public class PlayerMovement : MonoBehaviour
             dashing = true;
             nextDashAvailable = Time.time + 1f/dashRate;
             dashTimer = dashDuration;
+
+            Dash();
         }
         if (dashing)
         {   
-            Dash();
             dashTimer -= Time.deltaTime;
             if (dashTimer < 0)
             {
@@ -163,7 +164,7 @@ public class PlayerMovement : MonoBehaviour
     void Dash()
     {
         
-        rb.velocity = new Vector2(dashDirection.x * dashSpeed * Time.deltaTime, dashDirection.y * dashSpeed * Time.deltaTime);
+        rb.velocity += new Vector2(dashDirection.x * dashSpeed, dashDirection.y * dashSpeed);
     }
 
     //Wallslide
