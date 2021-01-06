@@ -232,12 +232,12 @@ MonoBehaviour:
   dashSpeed: 50
   dashDuration: 0.1
   dashRate: 1
-  dashEnabled: 1
+  dashEnabled: 0
   jumpForce: 18.9
   slideSpeed: 2000
   wallJumpForce: 6
   wallJumpDuration: 0.5
-  wallJumpEnabled: 1
+  wallJumpEnabled: 0
   rb: {fileID: 0}
   boxCollider2D: {fileID: 0}
   groundLayer:
