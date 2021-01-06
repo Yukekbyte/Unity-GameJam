@@ -75,7 +75,7 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: Ability Unlocked
-    clip: {fileID: 8300000, guid: 3cbdb07de3afef84e8f5e3f21ca7af03, type: 3}
+    clip: {fileID: 8300000, guid: 0797001dc5cb8c5439261719f3a01fbb, type: 3}
     volume: 1
     pitch: 1
     loop: 0
