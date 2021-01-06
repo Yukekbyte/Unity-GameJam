@@ -100,7 +100,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Typewritter
     clip: {fileID: 8300000, guid: e44c86c44e922b04d8a7eb0db1ea4502, type: 3}
-    volume: 1
+    volume: 0.334
     pitch: 1
     loop: 1
     source: {fileID: 0}

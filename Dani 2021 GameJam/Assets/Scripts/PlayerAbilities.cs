@@ -40,6 +40,7 @@ public class PlayerAbilities : MonoBehaviour
 
     void Update()
     {
+        print(souls);
         // ***DO NOT TOUCH*** (unless needed)
         if (Input.GetKeyDown(KeyCode.E)) //als je e indrukt zullen alle enemies op het scherm in een array worden geplaatst
         {

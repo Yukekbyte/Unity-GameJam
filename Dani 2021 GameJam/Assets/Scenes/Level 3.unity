@@ -46381,7 +46381,7 @@ PrefabInstance:
     - target: {fileID: 7953200881629382794, guid: a25356b3f7b41d24295fdbd1bea0940e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 7953200881629382794, guid: a25356b3f7b41d24295fdbd1bea0940e,
         type: 3}
@@ -46807,6 +46807,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5274821967573254277, guid: b45836895fb4f97458e3a24ff023f9b6,
+        type: 3}
+      propertyPath: wallJumpEnabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5274821967573254281, guid: b45836895fb4f97458e3a24ff023f9b6,
         type: 3}

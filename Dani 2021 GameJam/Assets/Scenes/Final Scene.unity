@@ -19833,6 +19833,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5274821967573254276, guid: b45836895fb4f97458e3a24ff023f9b6,
         type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -20.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 5274821967573254276, guid: b45836895fb4f97458e3a24ff023f9b6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5274821967573254276, guid: b45836895fb4f97458e3a24ff023f9b6,
+        type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
@@ -19865,6 +19875,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5274821967573254277, guid: b45836895fb4f97458e3a24ff023f9b6,
+        type: 3}
+      propertyPath: dashEnabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5274821967573254277, guid: b45836895fb4f97458e3a24ff023f9b6,
+        type: 3}
+      propertyPath: wallJumpEnabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5274821967573254281, guid: b45836895fb4f97458e3a24ff023f9b6,
         type: 3}
