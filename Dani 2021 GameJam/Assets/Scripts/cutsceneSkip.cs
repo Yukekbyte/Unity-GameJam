@@ -22,11 +22,13 @@ public class cutsceneSkip : MonoBehaviour
             {
                 SceneManager.LoadScene("EndScreen");
                 GameObject.FindObjectOfType<AudioManager>().Play("Theme");
+                GameObject.FindObjectOfType<AudioManager>().Stop("Typewritter");
             }
             if (SceneManager.GetActiveScene().name == "CutsceneStart")
             {
                 SceneManager.LoadScene("level1");
                 GameObject.FindObjectOfType<AudioManager>().Play("Theme");
+                GameObject.FindObjectOfType<AudioManager>().Stop("Typewritter");
             }
         }
     }
