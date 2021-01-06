@@ -64,7 +64,7 @@ public class PlayerAttack : MonoBehaviour
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 
-    void Delay() 
+    public void Delay() 
     {
         IsAttacking = 0;
     }

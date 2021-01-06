@@ -6,12 +6,15 @@ public class GameManager : MonoBehaviour
     public GameObject Main;
     public GameObject Settings;
     public PlayerAbilities playerAbilities;
+    public PlayerAttack playerAttack;
     bool SceneIsLevel;
     int MenuLayer;
     
     public void Start()
     {   
         playerAbilities = GameObject.FindObjectOfType<PlayerAbilities>();
+        playerAttack = GameObject.FindObjectOfType<PlayerAttack>();
+        playerAttack.Delay();
         
         switch (SceneManager.GetActiveScene().name)
         {
