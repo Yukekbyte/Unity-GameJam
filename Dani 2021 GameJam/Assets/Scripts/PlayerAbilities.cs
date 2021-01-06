@@ -40,7 +40,6 @@ public class PlayerAbilities : MonoBehaviour
 
     void Update()
     {
-        print(souls);
         // ***DO NOT TOUCH*** (unless needed)
         if (Input.GetKeyDown(KeyCode.E)) //als je e indrukt zullen alle enemies op het scherm in een array worden geplaatst
         {
@@ -75,7 +74,7 @@ public class PlayerAbilities : MonoBehaviour
                     GameObject.FindObjectOfType<AudioManager>().Play("Ability Unlocked");
                     playerMovement.dashEnabled = true;
                     string title = "Dash Ability";
-                    string explanation = "Dash ability is now unlocked. Press shift while moving to dash.";
+                    string explanation = "Dash ability is now unlocked. Press shift to dash. You can dash horizontally, vertically or diagonally.";
                     DisplayAbilityInfo(title, explanation);
                     break;
                 }
