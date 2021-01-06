@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
     
     public void StartGame() // Restarts full game/Switches scene to level 1
     {
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("CutsceneStart");
         Time.timeScale = 1;
     }
 
